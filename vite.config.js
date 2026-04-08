@@ -5,7 +5,7 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/reign-piece',
+  base: '/reign-piece/',
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
