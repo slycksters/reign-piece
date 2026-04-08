@@ -1,0 +1,110 @@
+/* Normal button css */
+.defaultButton {
+  position: relative;
+  padding: 16px 12px;
+  font-size: 12px;
+  cursor: pointer;
+
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  transition: all 0.3s ease-in-out;
+}
+
+.defaultButton:hover {
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 0 8px rgba(232, 240, 235, 0.2);
+}
+
+.defaultButton:focus {
+  border: 1px solid var(--border-strong);
+  outline: none;
+}
+
+/* Styled border button css */
+.styledBorders {
+  position: relative;
+  padding: 16px 12px;
+  font-size: 12px;
+  cursor: pointer;
+
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  transition: all 0.3s ease-in-out;
+}
+
+.text {
+  text-transform: uppercase;
+}
+
+.topBorder,
+.bottomBorder {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Shared pseudo-element base */
+.topBorder::before,
+.topBorder::after,
+.bottomBorder::before,
+.bottomBorder::after {
+  content: '';
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+/* TOP LEFT */
+.topBorder::before,
+.topBorder::after {
+  top: -1px;
+  left: -1px;
+}
+
+.topBorder::before {
+  height: 15px;
+  border-left: 1px solid var(--border-color);
+}
+
+.topBorder::after {
+  width: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* BOTTOM RIGHT */
+.bottomBorder::before,
+.bottomBorder::after {
+  bottom: -1px;
+  right: -1px;
+}
+
+.bottomBorder::before {
+  height: 15px;
+  border-right: 1px solid var(--border-color);
+}
+
+.bottomBorder::after {
+  width: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* FOCUS & HOVER ANIMATION */
+.styledBorders:hover .topBorder::before,
+.styledBorders:hover .bottomBorder::before {
+  height: calc(100% + 2px);
+}
+
+.styledBorders:hover .topBorder::after,
+.styledBorders:hover .bottomBorder::after {
+  width: calc(100% + 2px);
+}
+
+.styledBorders:hover {
+  box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
+}
+
+.styledBorders:focus {
+  border: 1px solid var(--border-strong);
+  outline: none;
+}

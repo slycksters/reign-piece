@@ -1,0 +1,22 @@
+.listItemButton {
+  text-transform: uppercase;
+}
+
+.guideButton {
+  background-color: var(--color-info-blue);
+}
+
+.playButton {
+  background-color: var(--color-success-green);
+  width: 133px;
+}
+
+.buttonTitle {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.tagName {
+  font-size: 10px;
+  font-family: var(--font-heading);
+}

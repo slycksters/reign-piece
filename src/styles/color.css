@@ -1,0 +1,86 @@
+:root {
+  /* 
+   * RAW COLOR PALETTE
+   * These are the core brand colors. Semantic variables below will reference these.
+   */
+  --color-deep-dark:     #101412;  /* The deepest background color */
+  --color-shadow-slate:  #1A221F;  /* A slightly lifted dark green/gray */
+  --color-raised-slate:  #242E2A;  /* A mid-tone for borders and elevated UI */
+  --color-green-glow:    #00E6A7;  /* Primary brand color, main action */
+  --color-green-bright:  #00FFC6;  /* Accent / Hover / Focus color */
+  --color-solar-gold:    #F0B400;  /* Secondary accent from the sun */
+  --color-ghost-white:   #E8F0EB;  /* Primary text, slightly off-white */
+  --color-muted-ash:     #808F87;  /* Secondary text */
+  --color-danger-red:    #DC3545;  /* Standard for errors */
+  --color-info-blue:     #3182CE;  /* Standard for informational messages */
+  --color-success-green: #28A745;  /* Standard for success messages */
+
+  /* 
+   * SEMANTIC BACKGROUND COLORS
+   * Use these for component backgrounds.
+   */
+  --bg-primary:   var(--color-deep-dark);     /* Main page background */
+  --bg-secondary: var(--color-shadow-slate);  /* Cards, containers */
+  --bg-elevated:  var(--color-raised-slate);  /* Modals, dropdowns, inputs */
+  --bg-muted:     #3A4D45;                   /* Subtle highlight panels */
+  --bg-inverse:   var(--color-ghost-white);   /* For rare light surfaces */
+
+  /* 
+   * SEMANTIC TEXT COLORS
+   * Use these for all typography.
+   */
+  --text-primary:   var(--color-ghost-white);   /* Main reading text, headings */
+  --text-secondary: var(--color-muted-ash);     /* Subtitles, less important text */
+  --text-muted:     #5E6C65;                   /* Hints, placeholders, disabled text */
+  --text-inverse:   var(--color-deep-dark);     /* Text on light backgrounds */
+  --text-accent:    var(--color-green-glow);    /* Highlighted text / Emphasis */
+
+  /* 
+   * BUTTONS: PRIMARY ACTION (Brand Color)
+   */
+  --btn-primary-bg:    var(--color-green-glow);
+  --btn-primary-text:  var(--color-deep-dark); /* High contrast */
+  --btn-primary-hover: var(--color-green-bright);
+
+  /* 
+   * BUTTONS: SECONDARY ACTION (Accent Color)
+   */
+  --btn-secondary-bg:    transparent;
+  --btn-secondary-text:  var(--color-solar-gold);
+  --btn-secondary-border: var(--color-solar-gold);
+  --btn-secondary-hover-bg: rgba(240, 180, 0, 0.1); /* Subtle gold fill on hover */
+  
+  /* 
+   * BUTTONS: NEUTRAL ACTION
+   */
+  --btn-neutral-bg:    var(--bg-elevated);
+  --btn-neutral-text:  var(--text-primary);
+  --btn-neutral-hover: var(--bg-muted);
+
+  /* 
+   * UI STATUS COLORS
+   */
+  --status-danger:  var(--color-danger-red);
+  --status-warning: var(--color-solar-gold);
+  --status-info:    var(--color-info-blue);
+  --status-success: var(--color-success-green);
+  --status-accent:  var(--color-green-bright); /* For special highlights */
+
+  /* 
+   * BORDERS, DIVIDERS & FOCUS
+   */
+  --border-default: var(--bg-elevated);
+  --border-strong:  var(--color-muted-ash);
+  --divider:        var(--bg-elevated);
+  --focus-ring:     var(--color-green-bright); /* For accessibility on inputs */
+}
+
+
+/* Apply base styles to your app */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: sans-serif; /* Recommended to set a base font */
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,202 @@
+/* =========================
+   FONT VARIABLES
+========================= */
+:root {
+  --font-heading: 'Oxanium', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Font sizes (modular scale) */
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-lg: 1.125rem; /* 18px */
+  --fs-xl: 1.5rem; /* 24px */
+  --fs-2xl: 2rem; /* 32px */
+  --fs-3xl: 2.5rem; /* 40px */
+  --fs-4xl: 3rem; /* 48px */
+
+  /* Line heights */
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.7;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  margin: 0;
+}
+
+/* =========================
+   HEADINGS (Oxanium)
+========================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  line-height: var(--lh-tight);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Scale */
+h1 {
+  font-size: var(--fs-4xl);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--fs-3xl);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: var(--fs-xl);
+  font-weight: 500;
+}
+
+h5 {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+
+h6 {
+  font-size: var(--fs-base);
+  font-weight: 500;
+}
+
+/* =========================
+   TEXT CONTENT (Inter)
+========================= */
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+}
+
+small {
+  font-size: var(--fs-sm);
+  color: #9ca3af;
+}
+
+/* Links */
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   LISTS
+========================= */
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin-bottom: var(--space-md);
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+/* =========================
+   UI TEXT (Gaming feel)
+========================= */
+.label {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.stat {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+.caption {
+  font-size: var(--fs-xs);
+  color: #9ca3af;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #9ca3af;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Spacing helpers */
+.mt-sm {
+  margin-top: var(--space-sm);
+}
+.mt-md {
+  margin-top: var(--space-md);
+}
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+.mb-sm {
+  margin-bottom: var(--space-sm);
+}
+.mb-md {
+  margin-bottom: var(--space-md);
+}
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}
+
+/* =========================
+   RESPONSIVE TYPOGRAPHY
+========================= */
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--fs-3xl);
+  }
+  h2 {
+    font-size: var(--fs-2xl);
+  }
+  h3 {
+    font-size: var(--fs-xl);
+  }
+}
