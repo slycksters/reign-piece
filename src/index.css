@@ -32,11 +32,35 @@ body {
   width: 2px;
   height: 2px;
 
-  background: #00FFC6;
+  background: var(--color-green-bright);
   border-radius: 50%;
 
-  box-shadow: 0 0 6px #00FFC6;
+  box-shadow: 0 0 6px var(--color-green-bright);
 
   pointer-events: none;
   z-index: -3;
+}
+
+.particle:nth-child(2n) {
+  background: var(--color-info-blue);
+  box-shadow: 0 0 6px var(--color-info-blue);
+}
+
+.particle:nth-child(3n) {
+  background: var(--color-solar-gold);
+  box-shadow: 0 0 6px var(--color-solar-gold);
+}
+
+.energy-pulse {
+  position: fixed;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 230, 167, 0.1),
+    transparent 70%
+  );
+
+  pointer-events: none;
+  z-index: -4; /* behind lightning/particles */
 }

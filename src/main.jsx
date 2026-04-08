@@ -12,11 +12,12 @@ import '@fontsource/oxanium/400.css';
 import '@fontsource/oxanium/600.css';
 import '@fontsource/oxanium/700.css';
 
-import { DataParticles } from '@components';
+import { DataParticles, EnergyPulse } from '@components';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <DataParticles />
+    <EnergyPulse />
     <App />
   </StrictMode>,
 )
