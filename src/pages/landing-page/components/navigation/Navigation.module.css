@@ -3,12 +3,35 @@
 }
 
 .guideButton {
-  background-color: var(--color-info-blue);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--color-info-blue);
+}
+
+.guideButton:hover {
+  color: var(--color-info-blue);
+  border: 1px solid var(--color-info-blue);
 }
 
 .playButton {
-  background-color: var(--color-success-green);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--color-success-green);
   width: 133px;
+}
+
+.playButton:hover {
+  color: var(--color-success-green);
+  border: 1px solid var(--color-success-green);
+}
+
+.updateLogsButton {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--color-danger-red);
+  width: 133px;
+}
+
+.updateLogsButton:hover {
+  color: var(--color-danger-red);
+  border: 1px solid var(--color-danger-red);
 }
 
 .buttonTitle {

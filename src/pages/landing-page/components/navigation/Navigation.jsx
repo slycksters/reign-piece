@@ -49,14 +49,17 @@ export const Navigation = () => {
         <div className={'flex justify-center mt-1.5'}>
           <Button
             className={clsx(styles.guideButton, 'mr-4')}
-            borderColor={'var(--color-info-blue)'}
-            text={'Beginning Guide'}
+            text={'beningging Guide'}
             variant={'default'}
           />
           <Button
-            className={styles.playButton}
-            borderColor={'var(--color-success-green)'}
+            className={clsx(styles.playButton, 'mr-4')}
             text={'Play'}
+            variant={'default'}
+          />
+          <Button
+            className={styles.updateLogsButton}
+            text={'Update Logs'}
             variant={'default'}
           />
         </div>
