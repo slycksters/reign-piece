@@ -1,11 +1,13 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
-import { LandingPage } from './pages'
 
 function App() {
 
   return (
     <>
-      <LandingPage />
+      <main>
+        <Outlet />
+      </main>
     </>
   )
 }
