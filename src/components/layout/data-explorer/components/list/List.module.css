@@ -1,0 +1,33 @@
+/* Content css */
+.filterContainer {
+  
+}
+
+.imageContainer {
+  align-items: center;
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  flex-shrink: 0;
+  height: 100px;
+  justify-content: center;
+  position: relative;
+}
+
+.infoContainer {
+  padding: 8px;
+  text-align: start;
+}
+
+.itemName {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.infoLabel {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.infoText {
+  font-size: 10px;
+}
