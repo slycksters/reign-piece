@@ -58,7 +58,7 @@ export const Navigation = () => {
           <Button
             className={clsx(styles.guideButton, 'mr-4')}
             Content={() => (
-              <NavLink to={PATHS['GUIDES']}>Beninnging Guide</NavLink>
+              <NavLink to={PATHS['GUIDES']}>Beningging Guide</NavLink>
             )}
             variant={'default'}
           />
