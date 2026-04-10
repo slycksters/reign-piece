@@ -7,6 +7,8 @@ import {
   TierListsPage,
   RecommendedBuildsPage,
   GameMechanicsPage,
+  GuidesPage,
+  UpdateLogsPage,
 } from '@pages';
 import { PATHS } from './paths';
 import App from '../App';
@@ -23,6 +25,8 @@ export const router = createBrowserRouter([
       { path: PATHS.TIER_LISTS, element: <TierListsPage /> },
       { path: PATHS.RECOMMENDED_BUILDS, element: <RecommendedBuildsPage /> },
       { path: PATHS.GAME_MECHANICS, element: <GameMechanicsPage /> },
+      { path: PATHS.GUIDES, element: <GuidesPage /> },
+      { path: PATHS.UPDATE_LOGS, element: <UpdateLogsPage /> },
     ],
   },
 ]);

@@ -10,7 +10,7 @@ export const List = (props) => {
     <main
       className={clsx(
         styles.list,
-        'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4',
+        'grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4',
       )}
     >
       {data.map((item) => (

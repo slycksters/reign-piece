@@ -8,8 +8,18 @@
 }
 
 .guideButton:hover {
-  color: var(--color-info-blue);
   border: 1px solid var(--color-info-blue);
+}
+
+.guideButton a {
+  color: var(--text-primary);
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.guideButton:hover a {
+  color: var(--color-info-blue);
 }
 
 .playButton {
@@ -32,6 +42,17 @@
 .updateLogsButton:hover {
   color: var(--color-danger-red);
   border: 1px solid var(--color-danger-red);
+}
+
+.updateLogsButton a {
+  color: var(--text-primary);
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.updateLogsButton:hover a {
+  color: var(--color-danger-red);
 }
 
 .buttonTitle {

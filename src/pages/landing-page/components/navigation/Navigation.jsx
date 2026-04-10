@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Button } from '@components';
 import { PATHS } from '@router';
 import styles from './Navigation.module.css';
@@ -57,17 +57,23 @@ export const Navigation = () => {
         <div className={'flex justify-center mt-1.5'}>
           <Button
             className={clsx(styles.guideButton, 'mr-4')}
-            text={'beningging Guide'}
+            Content={() => (
+              <NavLink to={PATHS['GUIDES']}>Beninnging Guide</NavLink>
+            )}
             variant={'default'}
           />
+
           <Button
             className={clsx(styles.playButton, 'mr-4')}
             text={'Play'}
             variant={'default'}
           />
+
           <Button
             className={styles.updateLogsButton}
-            text={'Update Logs'}
+            Content={() => (
+              <NavLink to={PATHS['UPDATE_LOGS']}>Update Logs</NavLink>
+            )}
             variant={'default'}
           />
         </div>
@@ -81,7 +87,7 @@ export const Navigation = () => {
           >
             {NAV_ITEMS.map((item) => (
               <div key={item.id} className={clsx(styles.listItem, 'w-full')}>
-                <Link to={PATHS[item.path]}>
+                <NavLink to={PATHS[item.path]}>
                   <Button
                     className={clsx(styles.listItemButton, 'h-full w-full')}
                     borderColor={item.borderColor}
@@ -107,7 +113,7 @@ export const Navigation = () => {
                       </div>
                     )}
                   />
-                </Link>
+                </NavLink>
               </div>
             ))}
           </div>

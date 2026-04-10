@@ -1,15 +1,16 @@
-import { Outlet } from 'react-router-dom'
-import './App.css'
+import { Outlet } from 'react-router-dom';
+import { FloatingNavbar } from '@components';
+import './App.css';
 
 function App() {
-
   return (
     <>
-      <main>
+      <main className={'position-relative'}>
+        <FloatingNavbar />
         <Outlet />
       </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

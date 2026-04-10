@@ -8,4 +8,6 @@ export const PATHS = {
   TIER_LISTS: `${BASE_PATH}/tier-lists`,
   RECOMMENDED_BUILDS: `${BASE_PATH}/recommended-builds`,
   GAME_MECHANICS: `${BASE_PATH}/game-mechanics`,
+  GUIDES: `${BASE_PATH}/guides`,
+  UPDATE_LOGS: `${BASE_PATH}/update-logs`,
 };

@@ -1,0 +1,88 @@
+.floatingNavbar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+/* button */
+.menuButton {
+  background: var(--color-shadow-slate);
+  border: 1px solid var(--color-raised-slate);
+  padding: 10px;
+  color: var(--color-green-glow);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.menuButton:focus,
+.menuButton:hover {
+  border-color: var(--color-green-glow);
+  box-shadow: 0 0 10px var(--color-green-glow);
+  outline: none;
+}
+
+/* overlay */
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  z-index: 9998;
+}
+
+/* menu */
+.popupMenu {
+  position: absolute;
+  top: 75px;
+  left: 20px;
+
+  background: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  padding: 16px;
+  padding-top: 37px;
+  width: 260px;
+
+  box-shadow: 0 0 20px rgba(0, 230, 167, 0.15);
+
+  animation: popupIn 0.25s ease-out;
+}
+
+/* animation */
+@keyframes popupIn {
+  from {
+    transform: translateY(-10px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* nav items */
+.navLink {
+  color: var(--color-green-glow);
+  display: block;
+  font-size: 12px;
+  transition: 0.2s ease;
+}
+
+.navLink:focus,
+.navLink:hover,
+.active,
+.active:focus {
+  color: var(--color-solar-gold);
+  outline: none;
+  padding-left: 14px;
+}
+
+.icon {
+  display: block;
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s ease;
+}
+.iconOpen {
+  transform: rotate(180deg) scale(1.1);
+}

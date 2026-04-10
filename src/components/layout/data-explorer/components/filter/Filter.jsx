@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import styles from './Filter.module.css';
 
 export const Filter = (props) => {
@@ -21,11 +22,10 @@ export const Filter = (props) => {
         <div className="flex items-center gap-2 flex-wrap">
           <button
             onClick={() => setCategory('all')}
-            className={`text-xs px-2 py-1 border ${
-              category === 'all'
-                ? 'border-white'
-                : 'border-[var(--border-default)]'
-            }`}
+            className={clsx(
+              styles.filterButton,
+              category === 'all' ? styles.activeFilterButton : '',
+            )}
           >
             All
           </button>
@@ -36,11 +36,10 @@ export const Filter = (props) => {
               <button
                 key={cat.id}
                 onClick={() => setCategory(cat.name)}
-                className={`text-xs px-2 py-1 border ${
-                  category === cat.name
-                    ? 'border-white'
-                    : 'border-[var(--border-default)]'
-                }`}
+                className={clsx(
+                  styles.filterButton,
+                  category === cat.name ? styles.activeFilterButton : '',
+                )}
               >
                 {cat.name}
               </button>
@@ -56,12 +55,13 @@ export const Filter = (props) => {
           {['name', 'rarity', 'tier', 'type'].map((key) => (
             <button
               key={key}
-              onClick={() => setSortKey((prevKey) => prevKey === key ? null : key)}
-              className={`text-xs px-2 py-1 border ${
-                sortKey === key
-                  ? 'border-white'
-                  : 'border-[var(--border-default)]'
-              }`}
+              onClick={() =>
+                setSortKey((prevKey) => (prevKey === key ? null : key))
+              }
+              className={clsx(
+                styles.filterButton,
+                sortKey === key ? styles.activeFilterButton : '',
+              )}
             >
               {key}
             </button>
@@ -72,7 +72,7 @@ export const Filter = (props) => {
             onClick={() =>
               setSortDir((prev) => (prev === 'asc' ? 'desc' : 'asc'))
             }
-            className="text-xs px-2 py-1 border border-[var(--border-default)]"
+            className={styles.filterButton}
           >
             {sortDir === 'asc' ? '↑' : '↓'}
           </button>
