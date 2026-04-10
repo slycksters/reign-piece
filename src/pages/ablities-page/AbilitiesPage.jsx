@@ -8,7 +8,7 @@ export const AbilitiesPage = () => {
     ...MAPPED_SPECS,
     ...MAPPED_WEAPONS,
   ];
-  console.log(combinedData.filter(o => !o.rarity))
+
   return (
     <div>
       <DataExplorer data={combinedData} title={'Abilities'} />
