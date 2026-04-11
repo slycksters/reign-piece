@@ -53,6 +53,7 @@
   content: '';
   position: absolute;
   transition: all 0.3s ease-in-out;
+  background: var(--border-color);
 }
 
 /* TOP LEFT */
@@ -63,13 +64,13 @@
 }
 
 .topBorder::before {
+  width: 1px; /* Acts as the left border */
   height: 15px;
-  border-left: 1px solid var(--border-color);
 }
 
 .topBorder::after {
+  height: 1px; /* Acts as the top border */
   width: 15px;
-  border-top: 1px solid var(--border-color);
 }
 
 /* BOTTOM RIGHT */
@@ -80,13 +81,13 @@
 }
 
 .bottomBorder::before {
+  width: 1px; /* Acts as the right border */
   height: 15px;
-  border-right: 1px solid var(--border-color);
 }
 
 .bottomBorder::after {
+  height: 1px; /* Acts as the bottom border */
   width: 15px;
-  border-bottom: 1px solid var(--border-color);
 }
 
 /* FOCUS & HOVER ANIMATION */

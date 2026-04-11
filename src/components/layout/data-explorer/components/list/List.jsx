@@ -20,7 +20,6 @@ export const List = (props) => {
           className="!p-0"
           variant={'styled_borders'}
         >
-          {/* REMOVED Content={() => ...} AND JUST PUT HTML INSIDE BUTTON */}
           <article className="flex flex-col h-full">
             <figure className={styles.imageContainer}>
               {item.image ? (
@@ -36,13 +35,17 @@ export const List = (props) => {
               )}
 
               {/* Overlay Container spanning top-left to top-right */}
-              <div className={'absolute top-1 left-1 right-1 flex justify-between gap-1 items-start pointer-events-none'}>
+              <div
+                className={
+                  'absolute top-1 left-1 right-1 flex justify-between gap-1 items-start pointer-events-none'
+                }
+              >
                 {/* Availability - Top Left */}
                 {item.availability && (
                   <span
                     className={clsx(
                       styles.infoText,
-                      'px-2 py-1 rounded text-white pointer-events-auto shrink min-w-0 truncate'
+                      'px-2 py-1 rounded text-white pointer-events-auto shrink min-w-0 truncate',
                     )}
                     style={{ background: item.availability.color }}
                   >
@@ -55,7 +58,7 @@ export const List = (props) => {
                   <span
                     className={clsx(
                       styles.infoText,
-                      'px-2 py-1 rounded text-white pointer-events-auto ml-auto shrink-0 break-all whitespace-normal text-right'
+                      'px-2 py-1 rounded text-white pointer-events-auto ml-auto shrink-0 break-all whitespace-normal text-right',
                     )}
                     style={{ background: item.rarity.color, maxWidth: '65%' }}
                   >
