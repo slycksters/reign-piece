@@ -54,10 +54,10 @@ export const Navigation = () => {
   return (
     <section className={clsx(styles.navigation, 'mt-8')}>
       <div className={'text-center'}>
-        <div className={'flex justify-center mt-1.5'}>
+        <div className={'grid grid-cols-3 gap-4'}>
           <Link to={PATHS['GUIDES']}>
             <Button
-              className={clsx(styles.guideButton, 'mr-4')}
+              className={clsx(styles.guideButton, 'h-full w-full')}
               variant={'default'}
             >
               Beningging Guide
@@ -65,13 +65,13 @@ export const Navigation = () => {
           </Link>
 
           <Button
-            className={clsx(styles.playButton, 'mr-4')}
+            className={clsx(styles.playButton, 'h-full w-full')}
             text={'Play'}
             variant={'default'}
           />
 
           <Link to={PATHS['UPDATE_LOGS']}>
-            <Button className={styles.updateLogsButton} variant={'default'}>
+            <Button className={clsx(styles.updateLogsButton, 'h-full w-full')} variant={'default'}>
               Update Logs
             </Button>
           </Link>
@@ -87,7 +87,6 @@ export const Navigation = () => {
             {NAV_ITEMS.map((item) => (
               <div key={item.id} className={clsx(styles.listItem, 'w-full')}>
                 <NavLink to={PATHS[item.path]}>
-                  {/* Changed to children */}
                   <Button
                     className={clsx(styles.listItemButton, 'h-full w-full')}
                     borderColor={item.borderColor}

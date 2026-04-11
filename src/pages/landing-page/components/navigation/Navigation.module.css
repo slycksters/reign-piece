@@ -25,7 +25,6 @@
 .playButton {
   background-color: var(--bg-primary);
   border: 1px solid var(--color-success-green);
-  width: 133px;
 }
 
 .playButton:hover {
@@ -36,7 +35,6 @@
 .updateLogsButton {
   background-color: var(--bg-primary);
   border: 1px solid var(--color-danger-red);
-  width: 133px;
 }
 
 .updateLogsButton:hover {
