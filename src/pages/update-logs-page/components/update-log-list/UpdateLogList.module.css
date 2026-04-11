@@ -1,0 +1,83 @@
+.accordionButton {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 12px 22px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordionButton:focus,
+.accordionButton:hover {
+  border-top-color: var(--color-green-glow);
+  box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
+  outline: none;
+}
+
+.selectedAccordionButton {
+  border-top-color: var(--color-green-glow);
+  box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
+}
+
+.selectedAccordionButton span:first-child {
+  color: var(--color-green-glow);
+}
+
+.updateDate {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.content {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
+  padding: 24px;
+}
+
+.contentItem {
+  border-left: 1px solid var(--color-success-green);
+  margin-top: 14px;
+  padding-left: 16px;
+}
+
+/* Codes */
+.contentList {
+  list-style: disc;
+}
+
+.contentListItem {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* Divider */
+.circleDivider {
+  background-color: var(--color-success-green);
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  margin-left: -5px;
+  position: relative;
+}
+
+.circleDivider::after {
+  background-color: var(--color-success-green);
+  border: 3px solid var(--bg-primary);
+  border-radius: 50%;
+  content: '';
+  height: 10px;
+  width: 10px;
+  margin-top: 1px;
+  margin-left: 1px;
+  position: absolute;
+}
+
+.circleDivider:last-child {
+  display: none;
+}
