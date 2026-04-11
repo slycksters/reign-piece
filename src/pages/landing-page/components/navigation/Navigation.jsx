@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@components';
 import { PATHS } from '@router';
 import styles from './Navigation.module.css';
@@ -55,32 +55,26 @@ export const Navigation = () => {
     <section className={clsx(styles.navigation, 'mt-8')}>
       <div className={'text-center'}>
         <div className={'flex justify-center mt-1.5'}>
-          <div className={'flex justify-center items-stretch gap-4'}>
-            <NavLink to={PATHS['GUIDES']} className={'flex'}>
-              <Button
-                className={clsx(styles.guideButton, 'h-full w-full')}
-                variant={'default'}
-              >
-                Beningging Guide
-              </Button>
-            </NavLink>
-
+          <Link to={PATHS['GUIDES']}>
             <Button
-              className={clsx(styles.playButton, 'h-full')}
+              className={clsx(styles.guideButton, 'mr-4')}
               variant={'default'}
             >
-              Play
+              Beningging Guide
             </Button>
+          </Link>
 
-            <NavLink to={PATHS['UPDATE_LOGS']} className={'flex'}>
-              <Button
-                className={clsx(styles.updateLogsButton, 'h-full w-full')}
-                variant={'default'}
-              >
-                Update Logs
-              </Button>
-            </NavLink>
-          </div>
+          <Button
+            className={clsx(styles.playButton, 'mr-4')}
+            text={'Play'}
+            variant={'default'}
+          />
+
+          <Link to={PATHS['UPDATE_LOGS']}>
+            <Button className={styles.updateLogsButton} variant={'default'}>
+              Update Logs
+            </Button>
+          </Link>
         </div>
 
         <div className={'mt-4'}>
@@ -93,6 +87,7 @@ export const Navigation = () => {
             {NAV_ITEMS.map((item) => (
               <div key={item.id} className={clsx(styles.listItem, 'w-full')}>
                 <NavLink to={PATHS[item.path]}>
+                  {/* Changed to children */}
                   <Button
                     className={clsx(styles.listItemButton, 'h-full w-full')}
                     borderColor={item.borderColor}
@@ -101,7 +96,7 @@ export const Navigation = () => {
                       <span className={styles.buttonTitle}>{item.title}</span>
                       <div
                         className={
-                          'flex flex-wrap items-center justify-center gap-1.5 text-[var(--color-muted-ash)]'
+                          'flex flex-wrap items-center justify-center gap-1.5 text-[var(--color-muted-ash)] mt-1'
                         }
                       >
                         {item.tags.map((tag, index) => (
