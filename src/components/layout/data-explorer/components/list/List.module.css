@@ -7,7 +7,7 @@
   align-items: center;
   border-bottom: 1px solid var(--border-default);
   display: flex;
-  flex-shrink: 0;
+  flex: 0 0 100px;
   height: 100px;
   justify-content: center;
   position: relative;

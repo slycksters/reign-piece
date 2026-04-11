@@ -53,7 +53,7 @@ export const DEVIL_FRUITS = [
     id: 'void-light',
     name: 'Void Light',
     type: 'devil-fruit',
-    rarity: 'mythic',
+    rarity: 'mythical',
     tier: 'C',
     image: null,
     acquisition: [],

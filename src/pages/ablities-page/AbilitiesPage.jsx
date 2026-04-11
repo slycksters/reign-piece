@@ -1,4 +1,4 @@
-import { DataExplorer } from '@components';
+import { DataExplorer, Header } from '@components';
 import { MAPPED_DEVIL_FRUITS, MAPPED_SPECS, MAPPED_WEAPONS } from '@data';
 import styles from './AbilitiesPage.module.css';
 
@@ -10,8 +10,12 @@ export const AbilitiesPage = () => {
   ];
 
   return (
-    <div>
-      <DataExplorer data={combinedData} title={'Abilities'} />
-    </div>
+    <>
+      <Header title={'Abilities'} />
+      <DataExplorer
+        data={combinedData}
+        sortOptions={['name', 'rarity', 'tier', 'type']}
+      />
+    </>
   );
 };

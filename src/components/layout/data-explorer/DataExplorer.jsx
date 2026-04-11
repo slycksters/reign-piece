@@ -1,10 +1,8 @@
-import { useMemo, useState } from 'react';
-import clsx from 'clsx';
-import styles from './DataExplorer.module.css';
 import { Filter, List } from './components';
+import styles from './DataExplorer.module.css';
 import { useDataExplorer } from './hooks';
 
-export const DataExplorer = ({ data, title }) => {
+export const DataExplorer = ({ data, sortOptions = ['name'] }) => {
   const {
     category,
     setCategory,
@@ -17,17 +15,9 @@ export const DataExplorer = ({ data, title }) => {
   } = useDataExplorer(data);
 
   return (
-    <section className={'container mx-auto px-8 py-16 md:px-0 md:py-13'}>
+    <section className={'container mx-auto px-8'}>
       <div className={'grid grid-cols-1 md:grid-cols-6 gap-4'}>
         <div className={'col-span-1 md:col-span-4 md:col-start-2'}>
-          <header className={'text-center'}>
-            <h1 className={clsx(styles.title, styles.shiningText)}>{title}</h1>
-
-            <div className={styles.dividerContainer}>
-              <div className={styles.dividerLine}></div>
-            </div>
-          </header>
-
           <Filter
             categories={categories}
             category={category}
@@ -37,6 +27,7 @@ export const DataExplorer = ({ data, title }) => {
             setSortKey={setSortKey}
             sortDir={sortDir}
             sortKey={sortKey}
+            sortOptions={sortOptions}
           />
 
           <List data={filteredData} />

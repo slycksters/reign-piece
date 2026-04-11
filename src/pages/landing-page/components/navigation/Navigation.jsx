@@ -55,64 +55,45 @@ export const Navigation = () => {
     <section className={clsx(styles.navigation, 'mt-8')}>
       <div className={'text-center'}>
         <div className={'flex justify-center mt-1.5'}>
-          <Button
-            className={clsx(styles.guideButton, 'mr-4')}
-            Content={() => (
-              <NavLink to={PATHS['GUIDES']}>Beningging Guide</NavLink>
-            )}
-            variant={'default'}
-          />
+          {/* Changed to children */}
+          <Button className={clsx(styles.guideButton, 'mr-4')} variant={'default'}>
+            <NavLink to={PATHS['GUIDES']}>Beningging Guide</NavLink>
+          </Button>
 
-          <Button
-            className={clsx(styles.playButton, 'mr-4')}
-            text={'Play'}
-            variant={'default'}
-          />
+          <Button className={clsx(styles.playButton, 'mr-4')} text={'Play'} variant={'default'} />
 
-          <Button
-            className={styles.updateLogsButton}
-            Content={() => (
-              <NavLink to={PATHS['UPDATE_LOGS']}>Update Logs</NavLink>
-            )}
-            variant={'default'}
-          />
+          {/* Changed to children */}
+          <Button className={styles.updateLogsButton} variant={'default'}>
+            <NavLink to={PATHS['UPDATE_LOGS']}>Update Logs</NavLink>
+          </Button>
         </div>
 
         <div className={'mt-4'}>
-          <div
-            className={clsx(
-              styles.navigationList,
-              'grid grid-cols-2 md:grid-cols-3 gap-4',
-            )}
-          >
+          <div className={clsx(styles.navigationList, 'grid grid-cols-2 md:grid-cols-3 gap-4')}>
             {NAV_ITEMS.map((item) => (
               <div key={item.id} className={clsx(styles.listItem, 'w-full')}>
                 <NavLink to={PATHS[item.path]}>
+                  
+                  {/* Changed to children */}
                   <Button
                     className={clsx(styles.listItemButton, 'h-full w-full')}
                     borderColor={item.borderColor}
-                    Content={() => (
-                      <div className={'flex flex-col items-center'}>
-                        <span className={styles.buttonTitle}>{item.title}</span>
-                        <div
-                          className={
-                            'flex flex-wrap items-center justify-center gap-1.5 text-[var(--color-muted-ash)] mt-1'
-                          }
-                        >
-                          {item.tags.map((tag, index) => (
-                            <React.Fragment key={tag}>
-                              <span className={styles.tagName}>{tag}</span>
-                              {index < item.tags.length - 1 && (
-                                <span aria-hidden={'true'} className={'mb-1'}>
-                                  &bull;
-                                </span>
-                              )}
-                            </React.Fragment>
-                          ))}
-                        </div>
+                  >
+                    <div className={'flex flex-col items-center'}>
+                      <span className={styles.buttonTitle}>{item.title}</span>
+                      <div className={'flex flex-wrap items-center justify-center gap-1.5 text-[var(--color-muted-ash)] mt-1'}>
+                        {item.tags.map((tag, index) => (
+                          <React.Fragment key={tag}>
+                            <span className={styles.tagName}>{tag}</span>
+                            {index < item.tags.length - 1 && (
+                              <span aria-hidden={'true'} className={'mb-1'}>&bull;</span>
+                            )}
+                          </React.Fragment>
+                        ))}
                       </div>
-                    )}
-                  />
+                    </div>
+                  </Button>
+
                 </NavLink>
               </div>
             ))}

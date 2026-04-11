@@ -20,12 +20,10 @@ export const useDataExplorer = (data) => {
 
   // FILTER + SORT
   const filteredData = useMemo(() => {
-    let result = [...data];
-
-    // FILTER
-    if (category !== 'all') {
-      result = result.filter((item) => item.type.name === category);
-    }
+    // FILTER FIRST
+    let result = category === 'all' 
+      ? [...data] 
+      : data.filter((item) => item.type?.name === category);
 
     // SORT
     result.sort((a, b) => {

@@ -16,73 +16,93 @@ export const List = (props) => {
       {data.map((item) => (
         <Button
           key={item.id}
-          borderColor={item.rarity.color}
+          borderColor={item.rarity?.color ?? 'var(--border-strong)'}
           className="!p-0"
           variant={'styled_borders'}
-          Content={() => (
-            <article className="flex flex-col">
-              <figure className={styles.imageContainer}>
-                {item.image ? (
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className={'w-full h-full object-cover'}
-                  />
-                ) : (
-                  <CiImageOn className={`text-[var(--text-muted)] text-3xl`} />
+        >
+          {/* REMOVED Content={() => ...} AND JUST PUT HTML INSIDE BUTTON */}
+          <article className="flex flex-col h-full">
+            <figure className={styles.imageContainer}>
+              {item.image ? (
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className={'w-full h-full object-cover'}
+                  loading={'lazy'}
+                  decoding={'async'}
+                />
+              ) : (
+                <CiImageOn className={`text-[var(--text-muted)] text-3xl`} />
+              )}
+
+              {/* Overlay Container spanning top-left to top-right */}
+              <div className={'absolute top-1 left-1 right-1 flex justify-between gap-1 items-start pointer-events-none'}>
+                {/* Availability - Top Left */}
+                {item.availability && (
+                  <span
+                    className={clsx(
+                      styles.infoText,
+                      'px-2 py-1 rounded text-white pointer-events-auto shrink min-w-0 truncate'
+                    )}
+                    style={{ background: item.availability.color }}
+                  >
+                    {item.availability.name}
+                  </span>
                 )}
 
-                {/* Rarity tag overlay */}
-                <span
-                  className={clsx(
-                    styles.infoText,
-                    'absolute top-1 right-1 px-2 py-1 rounded break-all whitespace-normal',
-                  )}
-                  style={{
-                    backgroundColor: item.rarity.color,
-                    maxWidth: 'calc(100% - 4px)',
-                  }}
-                >
-                  {item.rarity.name}
-                </span>
-              </figure>
+                {/* Rarity - Top Right */}
+                {item.rarity && (
+                  <span
+                    className={clsx(
+                      styles.infoText,
+                      'px-2 py-1 rounded text-white pointer-events-auto ml-auto shrink-0 break-all whitespace-normal text-right'
+                    )}
+                    style={{ background: item.rarity.color, maxWidth: '65%' }}
+                  >
+                    {item.rarity.name}
+                  </span>
+                )}
+              </div>
+            </figure>
 
-              <section className={styles.infoContainer}>
-                {/* Item Name */}
-                <label className={styles.itemName}>{item.name}</label>
+            <section className={styles.infoContainer}>
+              <span className={styles.itemName}>{item.name}</span>
 
-                {/* Properties grid */}
-                <div className={'grid grid-cols-2 gap-3 mt-2'}>
-                  {/* Type */}
+              <div className={'grid grid-cols-2 gap-3 mt-2'}>
+                {/* Type */}
+                <div className={'flex flex-col'}>
+                  <span className={styles.infoLabel}>Type</span>
+                  <span className={clsx(styles.infoText, 'py-1 break-all')}>
+                    {item.type?.name}
+                  </span>
+                </div>
+
+                {/* Tier */}
+                {item.tier && (
                   <div className={'flex flex-col'}>
-                    <label className={styles.infoLabel}>Type</label>
+                    <span className={styles.infoLabel}>Tier</span>
                     <span
                       className={clsx(styles.infoText, 'py-1 break-all')}
-                      style={{ backgroundColor: item.type.color }}
-                    >
-                      {item.type.name}
-                    </span>
-                  </div>
-
-                  {/* Tier */}
-                  <div className={'flex flex-col'}>
-                    <label className={styles.infoLabel}>Tier</label>
-                    <span
-                      className={clsx(styles.infoText, 'py-1 break-all')}
-                      style={{
-                        color: item.tier.color,
-                      }}
+                      style={{ color: item.tier.color }}
                     >
                       {item.tier.name}
                     </span>
                   </div>
+                )}
 
-                  {/* Add more properties if needed */}
-                </div>
-              </section>
-            </article>
-          )}
-        />
+                {/* Tradeable */}
+                {item.tradeable !== undefined && (
+                  <div className={'flex flex-col'}>
+                    <span className={styles.infoLabel}>Tradeable</span>
+                    <span className={clsx(styles.infoText, 'py-1 break-all')}>
+                      {item.tradeable ? 'Yes' : 'No'}
+                    </span>
+                  </div>
+                )}
+              </div>
+            </section>
+          </article>
+        </Button>
       ))}
     </main>
   );

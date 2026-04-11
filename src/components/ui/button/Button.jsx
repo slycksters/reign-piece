@@ -5,7 +5,7 @@ export const Button = (props) => {
   const {
     borderColor,
     className,
-    Content,
+    children,
     text,
     variant = 'styled_borders',
   } = props;
@@ -26,7 +26,7 @@ export const Button = (props) => {
         </>
       )}
 
-      {Content ? <Content /> : <span className={styles.text}>{text}</span>}
+      {children ? children : <span className={styles.text}>{text}</span>}
     </button>
   );
 };
