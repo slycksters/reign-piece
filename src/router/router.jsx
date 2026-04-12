@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import {
   LandingPage,
   AbilitiesPage,
-  StatBuffsPage,
+  PassiveBuffsPage,
   ItemsPage,
   TierListsPage,
   RecommendedBuildsPage,
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <LandingPage /> },
       { path: PATHS.ABILITIES, element: <AbilitiesPage /> },
-      { path: PATHS.STAT_BUFFS, element: <StatBuffsPage /> },
+      { path: PATHS.PASSIVE_BUFFS, element: <PassiveBuffsPage /> },
       { path: PATHS.ITEMS, element: <ItemsPage /> },
       { path: PATHS.TIER_LISTS, element: <TierListsPage /> },
       { path: PATHS.RECOMMENDED_BUILDS, element: <RecommendedBuildsPage /> },

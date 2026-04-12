@@ -46,15 +46,6 @@ export const FloatingNavbar = () => {
         <NavLink
           className={getNavClass}
           onClick={handleNavigate}
-          to={PATHS.UPDATE_LOGS}
-        >
-          Update Logs
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={getNavClass}
-          onClick={handleNavigate}
           to={PATHS.ABILITIES}
         >
           Abilities
@@ -64,9 +55,9 @@ export const FloatingNavbar = () => {
         <NavLink
           className={getNavClass}
           onClick={handleNavigate}
-          to={PATHS.STAT_BUFFS}
+          to={PATHS.PASSIVE_BUFFS}
         >
-          Stat Buffs
+          Passive Buffs
         </NavLink>
       </li>
       <li>
@@ -103,6 +94,15 @@ export const FloatingNavbar = () => {
           to={PATHS.GAME_MECHANICS}
         >
           Game Mechanics
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={getNavClass}
+          onClick={handleNavigate}
+          to={PATHS.UPDATE_LOGS}
+        >
+          Update Logs
         </NavLink>
       </li>
     </ul>

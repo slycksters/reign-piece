@@ -8,7 +8,7 @@ export const GuidesPage = () => {
         <div className={'col-span-1 md:col-span-4 md:col-start-2'}>
           <header className={'text-center'}>
             <h1 className={clsx(styles.title, styles.shiningText)}>
-              Guides Page
+              Guides
             </h1>
 
             <div className={styles.dividerContainer}>

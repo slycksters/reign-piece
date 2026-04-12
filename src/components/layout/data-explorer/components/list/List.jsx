@@ -102,6 +102,26 @@ export const List = (props) => {
                     </span>
                   </div>
                 )}
+
+                {/* Stack Limit */}
+                {item.stackLimit !== undefined && (
+                  <div className={'flex flex-col'}>
+                    <span className={styles.infoLabel}>Stack Limit</span>
+                    <span className={clsx(styles.infoText, 'py-1 break-all')}>
+                      {item.stackLimit}
+                    </span>
+                  </div>
+                )}
+
+                {/* Part */}
+                {item.part !== undefined && (
+                  <div className={'flex flex-col'}>
+                    <span className={styles.infoLabel}>Part</span>
+                    <span className={clsx(styles.infoText, 'py-1 break-all')}>
+                      {item.part.name}
+                    </span>
+                  </div>
+                )}
               </div>
             </section>
           </article>

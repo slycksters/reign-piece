@@ -18,7 +18,6 @@ export const Filter = (props) => {
   // Initialize transition
   const [isPending, startTransition] = useTransition();
 
-  // Wrap your state updates in startTransition
   const handleCategoryChange = (val) => {
     startTransition(() => setCategory(val));
   };
@@ -31,13 +30,21 @@ export const Filter = (props) => {
     startTransition(() => setSortDir((prev) => (prev === 'asc' ? 'desc' : 'asc')));
   };
 
+  const handlePluralization = (keyName) => {
+    // Special handles
+    if (keyName === 'Accessory') return 'Accessories';
+
+    // Normal handle
+    return `${keyName}s`;
+  };
+
   return (
-    <nav aria-label="Filters" className="flex flex-col gap-3 mt-4 mb-2">
+    <nav aria-label={'Filters'} className={'flex flex-col gap-3 mt-4 mb-2'}>
       {/* ROW 1: CATEGORY */}
-      <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-3">
+      <div className={'flex flex-col md:flex-row md:items-center gap-2 md:gap-3'}>
         <span className={styles.infoLabel}>Categories</span>
 
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className={'flex items-center gap-2 flex-wrap'}>
           <button
             onClick={() => handleCategoryChange('all')} // 4. Use new handler
             className={clsx(styles.filterButton, category === 'all' ? styles.activeFilterButton : '')}
@@ -51,17 +58,17 @@ export const Filter = (props) => {
               onClick={() => handleCategoryChange(cat.name)} // 4. Use new handler
               className={clsx(styles.filterButton, category === cat.name ? styles.activeFilterButton : '')}
             >
-              {cat.name}
+              {handlePluralization(cat.name)}
             </button>
           ))}
         </div>
       </div>
 
       {/* ROW 2: SORT */}
-      <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-3">
+      <div className={'flex flex-col md:flex-row md:items-center gap-2 md:gap-3'}>
         <span className={styles.infoLabel}>Sort</span>
 
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className={'flex items-center gap-2 flex-wrap'}>
           {sortOptions.map((key) => (
             <button
               key={key}
@@ -83,7 +90,7 @@ export const Filter = (props) => {
       </div>
 
       {/* ROW 3: RESULTS (RIGHT ALIGNED) */}
-      <div className="flex justify-end">
+      <div className={'flex justify-end'}>
         <span className={styles.infoLabel}>Results: {count}</span>
       </div>
     </nav>

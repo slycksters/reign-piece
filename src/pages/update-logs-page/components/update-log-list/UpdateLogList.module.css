@@ -1,5 +1,5 @@
 .accordionButton {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
   border: 1px solid var(--border-default);
   color: var(--text-primary);
   cursor: pointer;
@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.3s ease-in-out;
 }
 
 .accordionButton:focus,
@@ -34,7 +35,7 @@
 }
 
 .content {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
   border: 1px solid var(--border-default);
   box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
   padding: 24px;

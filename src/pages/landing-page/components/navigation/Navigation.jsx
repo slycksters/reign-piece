@@ -14,17 +14,17 @@ const NAV_ITEMS = [
     path: `ABILITIES`,
   },
   {
-    id: 'stat-buffs',
-    title: 'Stat Buffs',
+    id: 'passive-buffs',
+    title: 'Passive Buffs',
     borderColor: 'var(--color-solar-gold)',
-    tags: ['Ranks', 'Race', 'Traits', 'Titles', 'Vows', 'Heirloom'],
-    path: `STAT_BUFFS`,
+    tags: ['Ranks', 'Race', 'Traits', 'Titles', 'Vows'],
+    path: `PASSIVE_BUFFS`,
   },
   {
     id: 'items',
     title: 'Items',
     borderColor: 'var(--color-success-green)',
-    tags: ['Materials', 'Consumables'],
+    tags: ['Materials', 'Consumables', 'Accessories', 'Heirlooms'],
     path: `ITEMS`,
   },
   {

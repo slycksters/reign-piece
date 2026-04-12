@@ -1,7 +1,10 @@
-import { AVAILABILITIES, RARITIES, TIERS, TYPES } from '../constants';
+import { AVAILABILITIES, PARTS, RARITIES, TIERS, TYPES } from '../constants';
 import {
+  ACCESSORIES,
   CONSUMABLES,
+  COSMETICS,
   DEVIL_FRUITS,
+  HEIRLOOMS,
   MATERIALS,
   SPECS,
   WEAPONS,
@@ -42,4 +45,26 @@ export const MAPPED_CONSUMABLES = CONSUMABLES.map((c) => ({
   availability: AVAILABILITIES[c.availability],
   rarity: RARITIES[c.rarity],
   type: TYPES[c.type],
+}));
+
+export const MAPPED_ACCESSORIES = ACCESSORIES.map((a) => ({
+  ...a,
+  availability: AVAILABILITIES[a.availability],
+  rarity: RARITIES[a.rarity],
+  type: TYPES[a.type],
+}));
+
+export const MAPPED_HEIRLOOMS = HEIRLOOMS.map((h) => ({
+  ...h,
+  availability: AVAILABILITIES[h.availability],
+  rarity: RARITIES[h.rarity],
+  type: TYPES[h.type],
+}));
+
+export const MAPPED_COSMETICS = COSMETICS.map((c) => ({
+  ...c,
+  availability: AVAILABILITIES[c.availability],
+  rarity: RARITIES[c.rarity],
+  type: TYPES[c.type],
+  part: PARTS[c.part],
 }));

@@ -51,6 +51,11 @@ export const useDataExplorer = (data) => {
           bValue = b.type.name;
           break;
 
+        case 'tradeable':
+          aValue = a.tradeable;
+          bValue = b.tradeable;
+          break;
+
         default:
           return 0;
       }

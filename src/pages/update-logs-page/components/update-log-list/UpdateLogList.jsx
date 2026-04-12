@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { convertUtcToLocalDate, pluralizeText } from '@utils';
+import { convertUtcToLocalDate } from '@utils';
 import styles from './UpdateLogList.module.css';
 import { UPDATE_LOGS } from '../../constants';
 
@@ -28,6 +28,7 @@ export const UpdateLogList = () => {
                       update.id === prevId ? null : update.id,
                     )
                   }
+                  type={'button'}
                 >
                   <span>
                     <b>{update.name}</b>

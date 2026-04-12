@@ -1,0 +1,57 @@
+export const HEIRLOOMS = [
+  {
+    id: 'heirloom-of-ironclad',
+    name: 'Heirloom of Ironclad',
+    type: 'heirloom',
+    rarity: 'ancient',
+    stats: {
+      damageReduction: 15,
+      movementSpeed: -15,
+      dashPower: -15,
+    },
+    stackLimit: 15,
+    tradeable: true,
+    image: null,
+  },
+  {
+    id: 'heirloom-of-phantom',
+    name: 'Heirloom of Phantom',
+    type: 'heirloom',
+    rarity: 'ancient',
+    stats: {
+      damageReduction: -15,
+      movementSpeed: 15,
+      dashPower: 20,
+    },
+    stackLimit: 15,
+    tradeable: true,
+    image: null,
+  },
+  {
+    id: 'heirloom-of-wrath',
+    name: 'Heirloom of Wrath',
+    type: 'heirloom',
+    rarity: 'ancient',
+    stats: {
+      overallDamage: 15,
+      damageReduction: -15,
+    },
+    stackLimit: 15,
+    tradeable: true,
+    image: null,
+  },
+  {
+    id: 'heirloom-of-fortune',
+    name: 'Heirloom of Fortune',
+    type: 'heirloom',
+    rarity: 'ancient',
+    stats: {
+      overallDamage: -30,
+      damageReduction: -30,
+      dropRate: 20,
+    },
+    stackLimit: 15,
+    tradeable: true,
+    image: null,
+  },
+];

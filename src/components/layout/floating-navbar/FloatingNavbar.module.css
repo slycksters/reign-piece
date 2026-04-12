@@ -9,6 +9,7 @@
 .menuButton {
   background: var(--color-shadow-slate);
   border: 1px solid var(--color-raised-slate);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   padding: 10px;
   color: var(--color-green-glow);
   cursor: pointer;

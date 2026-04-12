@@ -3,7 +3,7 @@ export * from './game-mechanics-page';
 export * from './guides-page';
 export * from './items-page';
 export * from './landing-page';
+export * from './passive-buffs-page';
 export * from './recommended-builds-page';
-export * from './stat-buffs-page';
 export * from './tier-lists-page';
 export * from './update-logs-page';

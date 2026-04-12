@@ -3,7 +3,7 @@ export const BASE_PATH = '/reign-piece';
 export const PATHS = {
   HOME: `${BASE_PATH}/`,
   ABILITIES: `${BASE_PATH}/abilities`,
-  STAT_BUFFS: `${BASE_PATH}/stat-buffs`,
+  PASSIVE_BUFFS: `${BASE_PATH}/passive-buffs`,
   ITEMS: `${BASE_PATH}/items`,
   TIER_LISTS: `${BASE_PATH}/tier-lists`,
   RECOMMENDED_BUILDS: `${BASE_PATH}/recommended-builds`,
