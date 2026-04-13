@@ -1,0 +1,111 @@
+.race {
+  margin-top: 32px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+}
+
+.raceHeader {
+  padding: 16px;
+  padding-bottom: 0;
+}
+
+.raceHeaderTitle {
+  color: var(--color-solar-gold);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.raceHeaderDescription {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.raceItem {
+  border-bottom: 1px solid var(--border-default);
+  padding: 16px;
+}
+
+.raceItem:nth-child(odd) {
+  border-right: 1px solid var(--border-default);
+}
+
+.raceItem:nth-child(1),
+.raceItem:nth-child(2) {
+  border-top: 1px solid var(--border-default);
+}
+
+/* Enable if array length is even */
+/* .raceItem:nth-last-child(-n + 2) {
+  border-bottom: none;
+} */
+
+/* Enable if array length is odd */
+.raceItem:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .raceItem:nth-child(2) {
+    border-top: none;
+  }
+
+  .raceItem:nth-child(odd) {
+    border-right: none;
+  }
+}
+
+/* Content Styling */
+.raceItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.raceItemTitle {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.raceRarity {
+  color: var(--text-accent);
+  font-size: 12px;
+}
+
+.raceItemDescription {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.sectionLabel {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.buffList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.buffItem, .obtainmentText {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.statLabel {
+  color: var(--text-secondary);
+}
+
+.obtainmentText {
+  color: var(--color-success-green);
+  line-height: 1.4;
+}

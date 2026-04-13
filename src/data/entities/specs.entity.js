@@ -191,6 +191,16 @@ export const SPECS = [
     skills: [],
   },
   {
+    id: 'ulqiorra',
+    name: 'Ulquirra',
+    type: 'spec',
+    rarity: 'mythical',
+    tier: 'SSS',
+    image: null,
+    acquisition: [],
+    skills: [],
+  },
+  {
     id: 'reanimated-toji',
     name: 'Reanimated Toji',
     type: 'spec',

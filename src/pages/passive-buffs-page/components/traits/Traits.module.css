@@ -1,0 +1,118 @@
+.trait {
+  margin-top: 32px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+}
+
+.traitHeader {
+  padding: 16px;
+  padding-bottom: 0;
+}
+
+.traitHeaderTitle {
+  color: var(--color-solar-gold);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.traitHeaderDescription {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.traitItem {
+  border-bottom: 1px solid var(--border-default);
+  padding: 16px;
+}
+
+.traitItem:nth-child(odd) {
+  border-right: 1px solid var(--border-default);
+}
+
+.traitItem:nth-child(1),
+.traitItem:nth-child(2) {
+  border-top: 1px solid var(--border-default);
+}
+
+/* Enable this because TRAITS length (20) is even */
+.traitItem:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+/* Fallback for mobile or odd lengths */
+.traitItem:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .traitItem:nth-child(2) {
+    border-top: none;
+  }
+
+  .traitItem:nth-child(odd) {
+    border-right: none;
+  }
+
+  /* Reset the desktop-only removal of border-bottom for the second to last item on mobile */
+  .traitItem:nth-last-child(2) {
+    border-bottom: 1px solid var(--border-default);
+  }
+}
+
+/* Content Styling */
+.traitItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.traitItemTitle {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.traitRarity {
+  color: var(--text-accent);
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.traitItemDescription {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.sectionLabel {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.buffList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.buffItem,
+.obtainmentText {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.statLabel {
+  color: var(--text-secondary);
+}
+
+.obtainmentText {
+  color: var(--color-success-green);
+  line-height: 1.4;
+}

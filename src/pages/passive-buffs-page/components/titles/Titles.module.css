@@ -1,0 +1,109 @@
+.title {
+  margin-top: 32px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+}
+
+.titleHeader {
+  padding: 16px;
+  padding-bottom: 0;
+}
+
+.titleHeaderTitle {
+  color: var(--color-solar-gold);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.titleHeaderDescription {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.titleItem {
+  border-bottom: 1px solid var(--border-default);
+  padding: 16px;
+}
+
+.titleItem:nth-child(odd) {
+  border-right: 1px solid var(--border-default);
+}
+
+.titleItem:nth-child(1),
+.titleItem:nth-child(2) {
+  border-top: 1px solid var(--border-default);
+}
+
+/* 
+ * Since TITLES length (21) is odd:
+ * On desktop, only the very last item (21) is on the last row.
+ * If the length was even (e.g. 22), we would use (-n + 2).
+ */
+.titleItem:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .titleItem:nth-child(2) {
+    border-top: none;
+  }
+
+  .titleItem:nth-child(odd) {
+    border-right: none;
+  }
+}
+
+/* Content Styling */
+.titleItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.titleItemTitle {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.titleRarity {
+  color: var(--text-accent);
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.sectionLabel {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.buffList,
+.requirementList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.buffItem,
+.requirementItem {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.statLabel {
+  color: var(--text-secondary);
+}
+
+.requirementItem {
+  color: var(--color-success-green);
+  line-height: 1.4;
+}

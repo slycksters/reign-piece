@@ -358,6 +358,19 @@ export const ACCESSORIES = [
     image: null,
   },
   {
+    id: 'ulquiorra-uniform',
+    name: `Ulquiorra's Uniform`,
+    type: 'accessory',
+    rarity: 'mythical',
+    stats: {
+      power: 4200,
+      defense: 4050,
+    },
+    stackLimit: 3,
+    tradeable: true,
+    image: null,
+  },
+  {
     id: 'mahoraga-wheel',
     name: `Mahoraga's Wheel`,
     type: 'accessory',

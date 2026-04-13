@@ -1,22 +1,23 @@
-import clsx from 'clsx';
+import { Header } from '@components';
+import { Races, Ranks, Traits, Titles, Vows } from './components';
 import styles from './PassiveBuffsPage.module.css';
 
 export const PassiveBuffsPage = () => {
   return (
-    <div className={'container mx-auto px-8 py-16 md:px-0 md:py-13'}>
-      <div className={'grid grid-cols-1 md:grid-cols-6 gap-4'}>
-        <div className={'col-span-1 md:col-span-4 md:col-start-2'}>
-          <header className={'text-center'}>
-            <h1 className={clsx(styles.title, styles.shiningText)}>
-              Passive Buffs
-            </h1>
+    <>
+      <Header title={'Passive Buffs'} />
 
-            <div className={styles.dividerContainer}>
-              <div className={styles.dividerLine}></div>
-            </div>
-          </header>
+      <section className={'container mx-auto px-8'}>
+        <div className={'grid grid-cols-1 md:grid-cols-6'}>
+          <div className={'col-span-1 md:col-span-4 md:col-start-2'}>
+            <Ranks />
+            <Races />
+            <Traits />
+            <Titles />
+            <Vows />
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };

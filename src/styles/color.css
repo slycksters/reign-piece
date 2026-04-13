@@ -15,6 +15,36 @@
   --color-info-blue:     #3182CE;  /* Standard for informational messages */
   --color-success-green: #28A745;  /* Standard for success messages */
 
+  /*
+   * RARITY COLORS
+   */
+  --color-rarity-common: #9E9E9E;
+  --color-rarity-uncommon: #1EB326;
+  --color-rarity-rare: #0095FF;
+  --color-rarity-epic: #8836D1;
+  --color-rarity-legendary: #ECB44C;
+  --color-rarity-mythical: #8E0C0F;
+  --color-rarity-ancient: #EF9A69;
+  --color-rarity-special: linear-gradient(to bottom, #A4047E 0%, #60243D 55%, #949344 100%);
+  --color-rarity-limited: #280445;
+
+  /*
+   * TIER COLORS
+   */
+  --color-tier-d: #757575;
+  --color-tier-c: #4CAF50;
+  --color-tier-b: #2196F3;
+  --color-tier-a: #9C27B0;
+  --color-tier-s: #FFC107;
+  --color-tier-ss: #FF7A00;
+  --color-tier-sss: #FF3B3B;
+  --color-tier-x: #6A1B9A;
+
+  /*
+   * AVAILABILITY COLORS
+   */
+  --color-availability-unobtainable: #6A00FF;
+
   /* 
    * SEMANTIC BACKGROUND COLORS
    * Use these for component backgrounds.

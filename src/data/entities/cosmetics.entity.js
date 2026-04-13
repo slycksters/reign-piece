@@ -288,7 +288,7 @@ export const COSMETICS = [
     image: null,
   },
   {
-    id: 'bloodlust',
+    id: 'cosmetic-bloodlust',
     name: 'Bloodlust',
     type: 'cosmetic',
     rarity: 'mythical',
