@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <main className={'position-relative mb-5'}>
+      <main className={'position-relative pb-10'}>
         <FloatingNavbar />
         <Outlet />
       </main>

@@ -1,0 +1,164 @@
+.container {
+  margin-top: 24px;
+}
+
+.tierList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* =========================
+   ROW (base UI surface)
+========================= */
+.tierRow {
+  display: flex;
+  min-height: 64px;
+
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft tier glow sweep (like UI energy field) */
+.tierRow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    var(--tier-color-glow),
+    transparent 45%
+  );
+
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* =========================
+   LABEL (tier indicator)
+========================= */
+.tierLabel {
+  min-width: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 900;
+  font-size: 1.25rem;
+
+  position: relative;
+  overflow: hidden;
+
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-default);
+
+  /* CORE CHANGE: tier color text */
+  color: var(--tier-color);
+
+  /* MAIN GLOW (text-based like UI energy branding) */
+  text-shadow:
+    0 0 4px var(--tier-color-glow),
+    0 0 10px var(--tier-color-glow),
+    0 0 18px var(--tier-color-glow);
+
+  transition: all 0.25s ease;
+}
+
+/* soft energy aura */
+.tierLabel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at center,
+    var(--tier-color-glow),
+    transparent 70%
+  );
+
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* glowing underline (matches button active indicator) */
+.tierLabel::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 0;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--tier-color),
+    transparent
+  );
+
+  box-shadow: 0 0 10px var(--tier-color);
+}
+
+/* =========================
+   ITEMS AREA
+========================= */
+.tierItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  padding: 8px;
+  flex: 1;
+  align-items: center;
+}
+
+/* =========================
+   ITEM CARD (neutral UI card)
+========================= */
+.tierItem {
+  background: var(--bg-elevated);
+  cursor: pointer;
+
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  font-size: 13px;
+  border: 1px solid var(--border-default);
+
+  text-align: center;
+  min-width: 100px;
+
+  transition: all 0.25s ease;
+  will-change: transform;
+}
+
+/* subtle lift only (no harsh shadow) */
+.tierItem:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   IMAGE WRAPPER
+========================= */
+.itemImageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 75px;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+.empty {
+  color: var(--text-muted);
+  font-size: 12px;
+}

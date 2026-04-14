@@ -1,8 +1,13 @@
+import { useState } from 'react';
+import clsx from 'clsx';
+import { BsChevronDoubleDown } from 'react-icons/bs';
 import { MAPPED_RANKS } from '@data';
 import { pluralizeText } from '@utils';
 import styles from './Ranks.module.css';
 
 export const Ranks = () => {
+  const [openList, setOpenList] = useState(false);
+
   // Helper: overallDamage -> Overall Damage
   const formatLabel = (key) =>
     key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase());
@@ -11,8 +16,6 @@ export const Ranks = () => {
   const formatValue = (val) =>
     val % 1 !== 0 ? `${Math.round(val * 100)}%` : val;
 
-
-  console.log(MAPPED_RANKS)
   return (
     <article className={styles.rank}>
       <header className={styles.rankHeader}>
@@ -25,7 +28,13 @@ export const Ranks = () => {
       </header>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div
+        className={clsx(
+          'grid grid-cols-1 md:grid-cols-2',
+          styles.rankList,
+          openList ? styles.openedList : '',
+        )}
+      >
         {MAPPED_RANKS.map((r) => (
           <div
             key={r.id}
@@ -39,7 +48,7 @@ export const Ranks = () => {
                 {r.description}
               </span>
             ) : (
-              <div className="grid grid-cols-2 gap-4">
+              <div className={'grid grid-cols-2 gap-4'}>
                 {/* Buffs */}
                 <div className={styles.buffContainer}>
                   <p className={styles.sectionLabel}>Buffs</p>
@@ -60,7 +69,7 @@ export const Ranks = () => {
                   <p className={styles.sectionLabel}>Requirements</p>
                   <div className={styles.requirementList}>
                     {r.requirements.map((rr) => (
-                      <span key={rr.id} className={styles.requirementItem}>
+                      <span key={`${rr.id}${rr.quantity}`} className={styles.requirementItem}>
                         {rr.quantity} {pluralizeText(rr.name, rr.quantity)}
                       </span>
                     ))}
@@ -71,6 +80,14 @@ export const Ranks = () => {
           </div>
         ))}
       </div>
+
+      <button
+        className={styles.openListButton}
+        onClick={() => setOpenList(!openList)}
+        type={'button'}
+      >
+        <BsChevronDoubleDown className={clsx(styles.normalArrow, { [styles.rotated]: openList })} />
+      </button>
     </article>
   );
 };

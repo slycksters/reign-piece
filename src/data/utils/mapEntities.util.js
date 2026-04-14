@@ -1,3 +1,4 @@
+import { h3 } from 'framer-motion/client';
 import * as CONSTANTS from '../constants';
 import * as ENTITIES from '../entities';
 
@@ -79,3 +80,5 @@ export const MAPPED_RANKS = FINAL_DATA.filter(i => ENTITIES.RANKS.some(r => r.id
 export const MAPPED_TITLES = FINAL_DATA.filter(i => ENTITIES.TITLES.some(t => t.id === i.id));
 export const MAPPED_TRAITS = FINAL_DATA.filter(i => ENTITIES.TRAITS.some(t => t.id === i.id));
 export const MAPPED_VOWS = FINAL_DATA.filter(i => ENTITIES.VOWS.some(v => v.id === i.id));
+export const MAPPED_HAKIS = FINAL_DATA.filter(i => ENTITIES.HAKIS.some(h => h.id === i.id));
+export const MAPPED_PASSIVES = FINAL_DATA.filter(i => ENTITIES.PASSIVES.some(p => p.id === i.id));

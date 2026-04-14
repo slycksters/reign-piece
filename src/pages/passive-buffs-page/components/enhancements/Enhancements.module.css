@@ -1,118 +1,118 @@
-.vow {
+.enhancement {
   margin-top: 32px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-default);
 }
 
-.vowHeader {
+.enhancementHeader {
   padding: 16px;
   padding-bottom: 0;
 }
 
-.vowHeaderTitle {
+.enhancementHeaderTitle {
   color: var(--color-solar-gold);
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
 }
 
-.vowHeaderDescription {
+.enhancementHeaderDescription {
   color: var(--text-secondary);
   font-size: 14px;
   margin-top: 8px;
 }
 
-.vowList {
+.enhancementList {
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
 
 .openedList {
-  max-height: 1000px;
+  max-height: 500px;
 }
 
-.vowItem {
-  border-bottom: 1px solid var(--border-default);
+.enhancementItemFiller {
+  border-top: 1px solid var(--border-default);
   padding: 16px;
 }
 
-.vowItem:nth-child(odd) {
+.enhancementItem {
+  /* border-bottom: 1px solid var(--border-default); */
+  padding: 16px;
+}
+
+.enhancementItem:nth-child(odd) {
   border-right: 1px solid var(--border-default);
 }
 
-.vowItem:nth-child(1),
-.vowItem:nth-child(2) {
+.enhancementItem:nth-child(1),
+.enhancementItem:nth-child(2) {
   border-top: 1px solid var(--border-default);
 }
 
-/* VOWS length (4) is even, so hide last 2 on desktop */
-.vowItem:nth-last-child(-n + 2) {
+/* Enable if array length is even */
+/* .enhancementItem:nth-last-child(-n + 2) {
+  border-bottom: none;
+} */
+
+/* Enable if array length is odd */
+.enhancementItem:last-child {
   border-bottom: none;
 }
 
 @media (max-width: 768px) {
-  .vowItem:nth-child(2) {
+  .enhancementItem:nth-child(2) {
     border-top: none;
   }
 
-  .vowItem:nth-child(odd) {
+  .enhancementItem:nth-child(odd) {
     border-right: none;
   }
 
-  .vowItem:nth-last-child(2) {
-    border-bottom: 1px solid var(--border-default);
-  }
-  
-  .vowItem:last-child {
-    border-bottom: none;
+  .enhancementItemFiller {
+    display: none;
+    border: none;
   }
 }
 
 /* Content Styling */
-.vowItemHeader {
+.enhancementItemHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
 }
 
-.vowItemTitle {
+.enhancementItemTitle {
   font-weight: 700;
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0;
-  color: var(--text-primary);
 }
 
-.section {
-  margin-bottom: 12px;
+.enhancementItemDescription {
+  font-size: 13px;
+  color: var(--text-secondary);
 }
 
 .sectionLabel {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
-.list {
+.buffList {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
-.buffItem,
-.debuffItem,
-.specialItem,
-.methodItem {
+.buffItem, .obtainmentText {
   font-size: 13px;
-  line-height: 1.4;
-}
-
-.buffItem {
   color: var(--text-primary);
 }
 
@@ -120,16 +120,9 @@
   color: var(--text-secondary);
 }
 
-.specialItem {
-  color: var(--color-solar-gold);
-}
-
-.debuffItem {
-  color: var(--color-danger-red);
-}
-
-.methodItem {
+.obtainmentText {
   color: var(--color-success-green);
+  line-height: 1.4;
 }
 
 .openListButton {

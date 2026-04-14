@@ -1,22 +1,62 @@
+import { useState } from 'react';
 import clsx from 'clsx';
+
+import { Header } from '@components';
+import {
+  MAPPED_DEVIL_FRUITS,
+  MAPPED_SPECS,
+  MAPPED_TRAITS,
+  MAPPED_WEAPONS,
+} from '@data';
+import { TierList } from './components';
 import styles from './TierListsPage.module.css';
 
-export const TierListsPage = () => {
-  return (
-    <div className={'container mx-auto px-8 py-16 md:px-0 md:py-13'}>
-      <div className={'grid grid-cols-1 md:grid-cols-6 gap-4'}>
-        <div className={'col-span-1 md:col-span-4 md:col-start-2'}>
-          <header className={'text-center'}>
-            <h1 className={clsx(styles.title, styles.shiningText)}>
-              Tier Lists
-            </h1>
+const ABILITIES = [...MAPPED_DEVIL_FRUITS, ...MAPPED_SPECS, ...MAPPED_WEAPONS];
 
-            <div className={styles.dividerContainer}>
-              <div className={styles.dividerLine}></div>
+export const TierListsPage = () => {
+  const tierLists = {
+    abilities: {
+      name: 'Abilities',
+      data: ABILITIES,
+    },
+    traits: {
+      name: 'Traits',
+      data: MAPPED_TRAITS,
+    },
+  };
+
+  const [selectedKey, setSelectedKey] = useState('abilities');
+
+  const selected = tierLists[selectedKey];
+
+  return (
+    <>
+      <Header title={'Tier Lists'} />
+
+      {/* CONTENT */}
+      <section className="container mx-auto px-8">
+        <div className="grid grid-cols-1 md:grid-cols-6">
+          <div className="col-span-1 md:col-span-4 md:col-start-2">
+            {/* BUTTON GROUP */}
+            <div className={styles.buttonGroup}>
+              {Object.entries(tierLists).map(([key, list]) => (
+                <button
+                  key={key}
+                  onClick={() => setSelectedKey(key)}
+                  className={clsx(
+                    styles.button,
+                    selectedKey === key && styles.activeButton,
+                  )}
+                >
+                  {list.name}
+                </button>
+              ))}
             </div>
-          </header>
+
+            <TierList data={selected.data} />
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };

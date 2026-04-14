@@ -1,8 +1,12 @@
-import React from 'react';
+import { useState } from 'react';
+import clsx from 'clsx';
+import { BsChevronDoubleDown } from 'react-icons/bs';
 import { MAPPED_VOWS } from '@data';
 import styles from './Vows.module.css';
 
 export const Vows = () => {
+  const [openList, setOpenList] = useState(false);
+
   // Helper: overallDamage -> Overall Damage
   const formatLabel = (key) =>
     key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase());
@@ -17,13 +21,19 @@ export const Vows = () => {
         <h3 className={styles.vowHeaderTitle}>Vows</h3>
         <p className={styles.vowHeaderDescription}>
           Binding Vows are sacred contracts that grant immense power in exchange
-          for significant restrictions or specific conditions. Once bound, a vow 
+          for significant restrictions or specific conditions. Once bound, a vow
           cannot be easily broken.
         </p>
       </header>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div
+        className={clsx(
+          'grid grid-cols-1 md:grid-cols-2',
+          styles.vowList,
+          openList ? styles.openedList : '',
+        )}
+      >
         {MAPPED_VOWS.map((v) => (
           <div key={v.id} className={styles.vowItem}>
             <div className={styles.vowItemHeader}>
@@ -35,19 +45,24 @@ export const Vows = () => {
               <div className={styles.leftColumn}>
                 {/* Buffs */}
                 <div className={styles.section}>
-                    <p className={styles.sectionLabel}>Buffs</p>
-                    <div className={styles.list}>
-                      {Object.keys(v.buffs || {}).length > 0 ? Object.entries(v.buffs).map(([key, value]) => (
+                  <p className={styles.sectionLabel}>Buffs</p>
+                  <div className={styles.list}>
+                    {Object.keys(v.buffs || {}).length > 0 ? (
+                      Object.entries(v.buffs).map(([key, value]) => (
                         <span key={key} className={styles.buffItem}>
-                          <span className={styles.statLabel}>{formatLabel(key)}:</span> {formatValue(value)}
+                          <span className={styles.statLabel}>
+                            {formatLabel(key)}:
+                          </span>{' '}
+                          {formatValue(value)}
                         </span>
-                      )) : (
-                        <span className={styles.buffItem}>
-                          <span className={styles.statLabel}>None</span>
-                        </span>
-                      )}
-                    </div>
+                      ))
+                    ) : (
+                      <span className={styles.buffItem}>
+                        <span className={styles.statLabel}>None</span>
+                      </span>
+                    )}
                   </div>
+                </div>
 
                 {/* Special Effects */}
                 {v.specialEffects?.length > 0 && (
@@ -55,7 +70,9 @@ export const Vows = () => {
                     <p className={styles.sectionLabel}>Special Effects</p>
                     <div className={styles.list}>
                       {v.specialEffects.map((effect, idx) => (
-                        <span key={idx} className={styles.specialItem}>{effect}</span>
+                        <span key={idx} className={styles.specialItem}>
+                          {effect}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -69,12 +86,17 @@ export const Vows = () => {
                       {Object.entries(v.debuffs).map(([key, value]) => {
                         if (key === 'additionals') {
                           return value.map((text, idx) => (
-                            <span key={idx} className={styles.debuffItem}>{text}</span>
+                            <span key={idx} className={styles.debuffItem}>
+                              {text}
+                            </span>
                           ));
                         }
                         return (
                           <span key={key} className={styles.debuffItem}>
-                            <span className={styles.statLabel}>{formatLabel(key)}:</span> {formatValue(value)}
+                            <span className={styles.statLabel}>
+                              {formatLabel(key)}:
+                            </span>{' '}
+                            {formatValue(value)}
                           </span>
                         );
                       })}
@@ -90,7 +112,9 @@ export const Vows = () => {
                   <p className={styles.sectionLabel}>Binding Method</p>
                   <div className={styles.list}>
                     {v.bindMethod.map((method, idx) => (
-                      <span key={idx} className={styles.methodItem}>{method}</span>
+                      <span key={idx} className={styles.methodItem}>
+                        {method}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -100,7 +124,9 @@ export const Vows = () => {
                   <p className={styles.sectionLabel}>Unbinding Method</p>
                   <div className={styles.list}>
                     {v.unbindMethod.map((method, idx) => (
-                      <span key={idx} className={styles.methodItem}>{method}</span>
+                      <span key={idx} className={styles.methodItem}>
+                        {method}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -109,6 +135,14 @@ export const Vows = () => {
           </div>
         ))}
       </div>
+
+      <button
+        className={styles.openListButton}
+        onClick={() => setOpenList(!openList)}
+        type={'button'}
+      >
+        <BsChevronDoubleDown className={clsx(styles.normalArrow, { [styles.rotated]: openList })} />
+      </button>
     </article>
   );
 };

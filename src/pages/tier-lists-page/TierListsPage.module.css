@@ -1,76 +1,93 @@
-/* Header css */
-title {
-  color: var(--color-danger-red);
+.buttonGroup {
+  justify-self: center;
 }
 
-.shiningText {
-  color: var(--color-danger-red, #ff0000);
-  background-image:
-    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent),
-    linear-gradient(
-      to right,
-      var(--color-danger-red, #ff0000),
-      var(--color-danger-red, #ff0000)
-    );
-  background-size:
-    200% 100%,
-    100% 100%;
-  background-position:
-    -200% 0,
-    0 0;
+/* BASE BUTTON */
+.button {
+  position: relative;
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px;
+  width: 100px;
 
-  /* Ensure neither background repeats */
-  background-repeat: no-repeat, no-repeat;
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
 
-  /* Clip the background to the text and make the text transparent */
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* Apply the animation */
-  animation: shine 3s infinite ease-in-out;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
 }
 
-@keyframes shine {
-  0% {
-    /* Animate only the first background layer (the shine) */
-    background-position:
-      -200% 0,
-      0 0;
-  }
-  60% {
-    /* The shine sweeps across, the base red stays put */
-    background-position:
-      200% 0,
-      0 0;
-  }
-  100% {
-    /* The shine stays off-screen right for the rest of the animation cycle */
-    background-position:
-      200% 0,
-      0 0;
-  }
+/* SEGMENT BORDERS */
+.button:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-left: 1px solid var(--border-default);
 }
 
-.dividerContainer {
-  align-items: center;
-  background-color: transparent; /* Same color as background */
-  display: flex;
-  height: 50px;
-  justify-content: center;
-  overflow: hidden;
-  width: 100%;
+.button:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right: 1px solid var(--border-default);
 }
 
-.dividerLine {
+/* HOVER (subtle only) */
+.button:hover {
+  background-color: var(--bg-elevated);
+}
+
+/* ACTIVE STATE (MAIN GLOW) */
+.activeButton {
   background: linear-gradient(
-    to right,
-    rgba(36, 46, 42, 0),
-    /* Transparent at start */ rgba(36, 46, 42, 0.7),
-    /* Fades in */ rgba(128, 143, 135, 1) 50%,
-    /* Brightest in middle */ rgba(36, 46, 42, 0.7),
-    /* Fades out */ rgba(36, 46, 42, 0) /* Transparent at end */
+    180deg,
+    rgba(0, 230, 167, 0.18),
+    rgba(0, 0, 0, 0)
   );
-  height: 1px; /* Thickness of the line */
-  width: 100%;
+
+  color: var(--text-primary);
+}
+
+/* INNER GLOW LINE (like UI beam) */
+.activeButton::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 0;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 230, 167, 0.95),
+    transparent
+  );
+
+  box-shadow: 0 0 10px rgba(0, 230, 167, 0.7);
+}
+
+/* SOFT ENERGY PULSE */
+.activeButton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 230, 167, 0.18),
+    transparent 70%
+  );
+
+  animation: glowPulse 2.2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }

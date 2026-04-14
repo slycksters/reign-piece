@@ -1,7 +1,12 @@
+import { useState } from 'react';
+import clsx from 'clsx';
+import { BsChevronDoubleDown } from 'react-icons/bs';
 import { MAPPED_TITLES } from '@data';
 import styles from './Titles.module.css';
 
 export const Titles = () => {
+  const [openList, setOpenList] = useState(false);
+
   // Helper: overallDamage -> Overall Damage
   const formatLabel = (key) =>
     key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase());
@@ -15,14 +20,20 @@ export const Titles = () => {
       <header className={styles.titleHeader}>
         <h3 className={styles.titleHeaderTitle}>Titles</h3>
         <p className={styles.titleHeaderDescription}>
-          Titles are prestigious honors earned by completing difficult tasks or 
-          reaching milestones. Equipping a title provides significant passive 
+          Titles are prestigious honors earned by completing difficult tasks or
+          reaching milestones. Equipping a title provides significant passive
           stat boosts to your character.
         </p>
       </header>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div
+        className={clsx(
+          'grid grid-cols-1 md:grid-cols-2',
+          styles.titleList,
+          openList ? styles.openedList : '',
+        )}
+      >
         {MAPPED_TITLES.map((t) => (
           <div key={t.id} className={styles.titleItem}>
             <div className={styles.titleItemHeader}>
@@ -51,19 +62,27 @@ export const Titles = () => {
 
               {/* Requirements */}
               <div className={styles.requirementContainer}>
-                  <p className={styles.sectionLabel}>Requirements</p>
-                  <div className={styles.requirementList}>
-                    {t.requirements.map((tr) => (
-                      <span key={tr.name} className={styles.requirementItem}>
-                        {tr.name}
-                      </span>
-                    ))}
-                  </div>
+                <p className={styles.sectionLabel}>Requirements</p>
+                <div className={styles.requirementList}>
+                  {t.requirements.map((tr) => (
+                    <span key={tr.name} className={styles.requirementItem}>
+                      {tr.name}
+                    </span>
+                  ))}
                 </div>
+              </div>
             </div>
           </div>
         ))}
       </div>
+
+      <button
+        className={styles.openListButton}
+        onClick={() => setOpenList(!openList)}
+        type={'button'}
+      >
+        <BsChevronDoubleDown className={clsx(styles.normalArrow, { [styles.rotated]: openList })} />
+      </button>
     </article>
   );
 };

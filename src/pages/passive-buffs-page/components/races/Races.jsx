@@ -1,7 +1,12 @@
+import { useState } from 'react';
+import clsx from 'clsx';
+import { BsChevronDoubleDown } from 'react-icons/bs';
 import { MAPPED_RACES } from '@data';
 import styles from './Races.module.css';
 
 export const Races = () => {
+  const [openList, setOpenList] = useState(false);
+
   // Helper: overallDamage -> Overall Damage
   const formatLabel = (key) =>
     key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase());
@@ -22,7 +27,13 @@ export const Races = () => {
       </header>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div
+        className={clsx(
+          'grid grid-cols-1 md:grid-cols-2',
+          styles.raceList,
+          openList ? styles.openedList : '',
+        )}
+      >
         {MAPPED_RACES.map((r) => (
           <div key={r.id} className={styles.raceItem}>
             <div className={styles.raceItemHeader}>
@@ -32,7 +43,7 @@ export const Races = () => {
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className={'grid grid-cols-2 gap-4'}>
               {/* Buffs */}
               <div className={styles.buffContainer}>
                 {r.name !== 'Human' && (
@@ -65,6 +76,14 @@ export const Races = () => {
           </div>
         ))}
       </div>
+
+      <button
+        className={styles.openListButton}
+        onClick={() => setOpenList(!openList)}
+        type={'button'}
+      >
+        <BsChevronDoubleDown className={clsx(styles.normalArrow, { [styles.rotated]: openList })} />
+      </button>
     </article>
   );
 };

@@ -4,6 +4,7 @@ export const TRAITS = [
     name: 'None',
     description: 'The starting trait, does not provide any buffs.',
     rarity: 'uncommon',
+    tier: 'D',
     chance: 0.5,
     stats: {},
     obtainment: 'Obtainable via the [Trait Reroll] MarkusVFX NPC',
@@ -12,6 +13,7 @@ export const TRAITS = [
     id: 'basic',
     name: 'Basic',
     rarity: 'rare',
+    tier: 'C',
     chance: 0.1,
     stats: {
       overallDamage: 0.03,
@@ -24,6 +26,7 @@ export const TRAITS = [
     id: 'sharp-reflexes',
     name: 'Sharp Reflexes',
     rarity: 'rare',
+    tier: 'C',
     chance: 0.1,
     stats: {
       damageReduction: 0.03,
@@ -36,6 +39,7 @@ export const TRAITS = [
     id: 'innate-potential',
     name: 'Innate Potential',
     rarity: 'epic',
+    tier: 'C',
     chance: 0.04,
     stats: {
       overallDamage: 0.07,
@@ -48,6 +52,7 @@ export const TRAITS = [
     id: 'sleep-walker',
     name: 'Sleep Walker',
     rarity: 'epic',
+    tier: 'B',
     chance: 0.04,
     stats: {
       overallDamage: 0.1,
@@ -61,6 +66,7 @@ export const TRAITS = [
     id: 'advanced-will',
     name: 'Advanced Will',
     rarity: 'legendary',
+    tier: 'B',
     chance: 0.15,
     stats: {
       overallDamage: 0.12,
@@ -72,6 +78,7 @@ export const TRAITS = [
     id: 'infernal-soul',
     name: 'Infernal Soul',
     rarity: 'legendary',
+    tier: 'B',
     chance: 0.15,
     stats: {
       overallDamage: 0.14,
@@ -84,6 +91,7 @@ export const TRAITS = [
     id: 'cursed-spirit',
     name: 'Cursed Spirit',
     rarity: 'legendary',
+    tier: 'A',
     chance: 0.15,
     stats: {
       overallDamage: 0.165,
@@ -97,6 +105,7 @@ export const TRAITS = [
     id: 'race-bloodlust',
     name: 'Bloodlust',
     rarity: 'mythical',
+    tier: 'S',
     chance: 0.04,
     stats: {
       overallDamage: 0.18,
@@ -110,6 +119,7 @@ export const TRAITS = [
     id: 'conquered-soul',
     name: 'Conquered Soul',
     rarity: 'mythical',
+    tier: 'A',
     chance: 0.004,
     stats: {
       overallDamage: 0.2,
@@ -123,6 +133,7 @@ export const TRAITS = [
     id: 'the-swordsman',
     name: 'The Swordsman',
     rarity: 'mythical',
+    tier: 'A',
     chance: 0.0035,
     stats: {
       overallDamage: 0.23,
@@ -136,6 +147,7 @@ export const TRAITS = [
     id: 'godspeed',
     name: 'Godspeed',
     rarity: 'mythical',
+    tier: 'S',
     chance: 0.003,
     stats: {
       overallDamage: 0.25,
@@ -150,6 +162,7 @@ export const TRAITS = [
     id: 'disgraced-one',
     name: 'Disgraced One',
     rarity: 'mythical',
+    tier: 'SS',
     chance: 0.035,
     stats: {
       overallDamage: 0.325,
@@ -167,6 +180,7 @@ export const TRAITS = [
     id: 'crimson-knight',
     name: 'Crimson Knight',
     rarity: 'special',
+    tier: 'SS',
     stats: {
       overallDamage: 0.35,
       damageReduction: 0.1,
@@ -181,6 +195,7 @@ export const TRAITS = [
     id: 'reawakened',
     name: 'Reawakened',
     rarity: 'special',
+    tier: 'SS',
     chance: 0.005,
     stats: {
       overallDamage: 0.375,
@@ -196,6 +211,7 @@ export const TRAITS = [
     id: 'blood-frenzy',
     name: 'Blood Frenzy',
     rarity: 'special',
+    tier: 'SSS',
     chance: 0.1,
     stats: {
       overallDamage: 0.4,
@@ -213,6 +229,7 @@ export const TRAITS = [
     id: 'martial-artist',
     name: 'Martial Artist',
     rarity: 'special',
+    tier: 'SSS',
     stats: {
       overallDamage: 0.465,
       damageReduction: 0.25,
@@ -226,6 +243,7 @@ export const TRAITS = [
     id: 'hollow-instinct',
     name: 'Hollow Instinct',
     rarity: 'special',
+    tier: 'SSS',
     chance: 0.05,
     stats: {
       overallDamage: 0.495,
@@ -240,6 +258,7 @@ export const TRAITS = [
     id: 'phantom-of-zenin',
     name: 'Phantom of Zenin',
     rarity: 'limited',
+    tier: 'S',
     availability: 'unobtainable',
     chance: 0.05,
     stats: {
@@ -255,6 +274,7 @@ export const TRAITS = [
     id: 'lovebreaker',
     name: 'Lovebreaker',
     rarity: 'limited',
+    tier: 'A',
     availability: 'unobtainable',
     chance: 0.05,
     stats: {

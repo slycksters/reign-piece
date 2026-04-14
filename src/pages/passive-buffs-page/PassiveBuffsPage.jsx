@@ -1,5 +1,5 @@
 import { Header } from '@components';
-import { Races, Ranks, Traits, Titles, Vows } from './components';
+import { Enhancements, Haki, Races, Ranks, Traits, Titles, Vows } from './components';
 import styles from './PassiveBuffsPage.module.css';
 
 export const PassiveBuffsPage = () => {
@@ -15,6 +15,8 @@ export const PassiveBuffsPage = () => {
             <Traits />
             <Titles />
             <Vows />
+            <Haki />
+            <Enhancements />
           </div>
         </div>
       </section>

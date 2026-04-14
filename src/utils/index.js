@@ -1,2 +1,2 @@
-export * from './data.utils';
-export * from './string.utils';
+export * from './date.util';
+export * from './string.util';

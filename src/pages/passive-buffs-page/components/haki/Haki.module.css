@@ -1,28 +1,28 @@
-.vow {
+.haki {
   margin-top: 32px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-default);
 }
 
-.vowHeader {
+.hakiHeader {
   padding: 16px;
   padding-bottom: 0;
 }
 
-.vowHeaderTitle {
+.hakiHeaderTitle {
   color: var(--color-solar-gold);
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
 }
 
-.vowHeaderDescription {
+.hakiHeaderDescription {
   color: var(--text-secondary);
   font-size: 14px;
   margin-top: 8px;
 }
 
-.vowList {
+.hakiList {
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
@@ -32,87 +32,77 @@
   max-height: 1000px;
 }
 
-.vowItem {
+.hakiItem {
   border-bottom: 1px solid var(--border-default);
   padding: 16px;
 }
 
-.vowItem:nth-child(odd) {
+.hakiItem:nth-child(odd) {
   border-right: 1px solid var(--border-default);
 }
 
-.vowItem:nth-child(1),
-.vowItem:nth-child(2) {
+.hakiItem:nth-child(1),
+.hakiItem:nth-child(2) {
   border-top: 1px solid var(--border-default);
 }
 
-/* VOWS length (4) is even, so hide last 2 on desktop */
-.vowItem:nth-last-child(-n + 2) {
+/* Enable if array length is even */
+/* .hakiItem:nth-last-child(-n + 2) {
+  border-bottom: none;
+} */
+
+/* Enable if array length is odd */
+.hakiItem:last-child {
   border-bottom: none;
 }
 
 @media (max-width: 768px) {
-  .vowItem:nth-child(2) {
+  .hakiItem:nth-child(2) {
     border-top: none;
   }
 
-  .vowItem:nth-child(odd) {
+  .hakiItem:nth-child(odd) {
     border-right: none;
-  }
-
-  .vowItem:nth-last-child(2) {
-    border-bottom: 1px solid var(--border-default);
-  }
-  
-  .vowItem:last-child {
-    border-bottom: none;
   }
 }
 
 /* Content Styling */
-.vowItemHeader {
+.hakiItemHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
 }
 
-.vowItemTitle {
+.hakiItemTitle {
   font-weight: 700;
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0;
-  color: var(--text-primary);
 }
 
-.section {
-  margin-bottom: 12px;
+.hakiItemDescription {
+  font-size: 13px;
+  color: var(--text-secondary);
 }
 
 .sectionLabel {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
-.list {
+.buffList {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
-.buffItem,
-.debuffItem,
-.specialItem,
-.methodItem {
+.buffItem, .obtainmentText {
   font-size: 13px;
-  line-height: 1.4;
-}
-
-.buffItem {
   color: var(--text-primary);
 }
 
@@ -120,16 +110,9 @@
   color: var(--text-secondary);
 }
 
-.specialItem {
-  color: var(--color-solar-gold);
-}
-
-.debuffItem {
-  color: var(--color-danger-red);
-}
-
-.methodItem {
+.obtainmentText {
   color: var(--color-success-green);
+  line-height: 1.4;
 }
 
 .openListButton {

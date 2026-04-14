@@ -22,6 +22,16 @@
   margin-top: 8px;
 }
 
+.rankList {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.openedList {
+  max-height: 1000px;
+}
+
 .rankItem {
   border-bottom: 1px solid var(--border-default);
   padding: 16px;
@@ -96,4 +106,27 @@
 
 .requirementItem {
   color: var(--color-success-green);
+}
+
+.openListButton {
+  border-top: 1px solid var(--border-default);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  width: 100%;
+}
+
+.openListButton:hover {
+  box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
+}
+
+.normalArrow {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.rotated {
+  transform: rotate(180deg);
 }
