@@ -2,11 +2,28 @@
   margin-top: 32px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-default);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.enhancement::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top left, rgba(0, 230, 167, 0.10), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(240, 180, 0, 0.08), transparent 50%);
+
+  pointer-events: none;
 }
 
 .enhancementHeader {
   padding: 16px;
   padding-bottom: 0;
+
+  position: relative;
 }
 
 .enhancementHeaderTitle {
@@ -14,18 +31,44 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
+
+  text-shadow:
+    0 0 6px rgba(240, 180, 0, 0.25),
+    0 0 14px rgba(240, 180, 0, 0.15);
 }
 
 .enhancementHeaderDescription {
   color: var(--text-secondary);
   font-size: 14px;
   margin-top: 8px;
+  opacity: 0.95;
 }
 
 .enhancementList {
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: max-height 0.35s ease-in-out;
+  position: relative;
+}
+
+.enhancementList::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 230, 167, 0.05),
+    transparent 30%
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.openedList::before {
+  opacity: 1;
 }
 
 .openedList {
@@ -38,12 +81,22 @@
 }
 
 .enhancementItem {
-  /* border-bottom: 1px solid var(--border-default); */
   padding: 16px;
+
+  transition: background 0.2s ease;
+}
+
+.enhancementItem:hover {
+  background: rgba(0, 230, 167, 0.03);
 }
 
 .enhancementItem:nth-child(odd) {
   border-right: 1px solid var(--border-default);
+  background: rgba(26, 34, 31, 0.35);
+}
+
+.enhancementItem:nth-child(odd):hover {
+  background: rgba(0, 230, 167, 0.01);
 }
 
 .enhancementItem:nth-child(1),
@@ -51,12 +104,6 @@
   border-top: 1px solid var(--border-default);
 }
 
-/* Enable if array length is even */
-/* .enhancementItem:nth-last-child(-n + 2) {
-  border-bottom: none;
-} */
-
-/* Enable if array length is odd */
 .enhancementItem:last-child {
   border-bottom: none;
 }
@@ -77,6 +124,7 @@
 }
 
 /* Content Styling */
+
 .enhancementItemHeader {
   display: flex;
   justify-content: space-between;
@@ -101,8 +149,14 @@
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--text-muted);
+
+  color: var(--color-green-bright);
+
   margin-bottom: 8px;
+
+  letter-spacing: 0.8px;
+
+  text-shadow: 0 0 6px rgba(0, 230, 167, 0.25);
 }
 
 .buffList {
@@ -111,7 +165,8 @@
   gap: 4px;
 }
 
-.buffItem, .obtainmentText {
+.buffItem,
+.obtainmentText {
   font-size: 13px;
   color: var(--text-primary);
 }
@@ -128,15 +183,22 @@
 .openListButton {
   border-top: 1px solid var(--border-default);
   cursor: pointer;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 8px;
   width: 100%;
+
+  background: transparent;
+
+  transition: background 0.2s ease;
 }
 
 .openListButton:hover {
-  box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
+  background: rgba(0, 230, 167, 0.06);
+  box-shadow: inset 0 0 12px rgba(0, 230, 167, 0.08);
 }
 
 .normalArrow {

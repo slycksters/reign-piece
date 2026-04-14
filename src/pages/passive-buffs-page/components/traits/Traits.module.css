@@ -2,6 +2,21 @@
   margin-top: 32px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-default);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.trait::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top left, rgba(0, 230, 167, 0.10), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(240, 180, 0, 0.08), transparent 50%);
+
+  pointer-events: none;
 }
 
 .traitHeader {
@@ -14,18 +29,23 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
+
+  text-shadow:
+    0 0 6px rgba(240, 180, 0, 0.25),
+    0 0 14px rgba(240, 180, 0, 0.15);
 }
 
 .traitHeaderDescription {
   color: var(--text-secondary);
   font-size: 14px;
   margin-top: 8px;
+  opacity: 0.95;
 }
 
 .traitList {
   max-height: 0;
   overflow: hidden;
-  transition: all 0.6s ease-in-out;
+  transition: max-height 0.6s ease-in-out;
 }
 
 .openedList {
@@ -35,10 +55,21 @@
 .traitItem {
   border-bottom: 1px solid var(--border-default);
   padding: 16px;
+
+  transition: background 0.2s ease;
+}
+
+.traitItem:hover {
+  background: rgba(0, 230, 167, 0.03);
 }
 
 .traitItem:nth-child(odd) {
   border-right: 1px solid var(--border-default);
+  background: rgba(26, 34, 31, 0.35);
+}
+
+.traitItem:nth-child(odd):hover {
+  background: rgba(0, 230, 167, 0.01);
 }
 
 .traitItem:nth-child(1),
@@ -46,12 +77,6 @@
   border-top: 1px solid var(--border-default);
 }
 
-/* Enable this because TRAITS length (20) is even */
-.traitItem:nth-last-child(-n + 2) {
-  border-bottom: none;
-}
-
-/* Fallback for mobile or odd lengths */
 .traitItem:last-child {
   border-bottom: none;
 }
@@ -65,13 +90,13 @@
     border-right: none;
   }
 
-  /* Reset the desktop-only removal of border-bottom for the second to last item on mobile */
   .traitItem:nth-last-child(2) {
     border-bottom: 1px solid var(--border-default);
   }
 }
 
 /* Content Styling */
+
 .traitItemHeader {
   display: flex;
   justify-content: space-between;
@@ -93,17 +118,18 @@
   text-transform: capitalize;
 }
 
-.traitItemDescription {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
 .sectionLabel {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--text-muted);
+
+  color: var(--color-green-bright);
+
   margin-bottom: 8px;
+
+  letter-spacing: 0.8px;
+
+  text-shadow: 0 0 6px rgba(0, 230, 167, 0.25);
 }
 
 .buffList {
@@ -130,15 +156,22 @@
 .openListButton {
   border-top: 1px solid var(--border-default);
   cursor: pointer;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 8px;
   width: 100%;
+
+  background: transparent;
+
+  transition: background 0.2s ease;
 }
 
 .openListButton:hover {
-  box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
+  background: rgba(0, 230, 167, 0.06);
+  box-shadow: inset 0 0 12px rgba(0, 230, 167, 0.08);
 }
 
 .normalArrow {
