@@ -7,14 +7,15 @@
 
     <title>Reign Piece</title>
 
+    <!-- Redirect Script -->
     <script type="text/javascript">
-      // Check if there's a redirect path stored in sessionStorage
-      const redirectPath = sessionStorage.redirect;
-      if (redirectPath) {
-        // Clear the stored path to prevent loops
-        delete sessionStorage.redirect;
-        // Use the History API to update the URL without a page reload
-        window.history.replaceState(null, null, redirectPath);
+      // Get the full redirect path from sessionStorage.
+      const redirect = sessionStorage.redirect;
+      // Clear the stored path.
+      delete sessionStorage.redirect;
+      // If a redirect path exists, use it to update the history.
+      if (redirect) {
+        window.history.replaceState(null, null, redirect);
       }
     </script>
 
