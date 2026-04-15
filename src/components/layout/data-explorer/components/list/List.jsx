@@ -17,10 +17,10 @@ export const List = (props) => {
         <Button
           key={item.id}
           borderColor={item.rarity?.color ?? 'var(--border-strong)'}
-          className="!p-0"
+          className={clsx(styles.cardButton, '!p-0')}
           variant={'styled_borders'}
         >
-          <article className="flex flex-col h-full">
+          <article className={'flex flex-col h-full'}>
             <figure className={styles.imageContainer}>
               {item.image ? (
                 <img

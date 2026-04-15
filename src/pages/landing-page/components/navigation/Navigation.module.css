@@ -53,6 +53,10 @@
   color: var(--color-danger-red);
 }
 
+.listItemButton:hover .buttonTitle {
+  text-shadow: var(--text-glow-white);
+}
+
 .buttonTitle {
   font-size: 14px;
   font-weight: 600;

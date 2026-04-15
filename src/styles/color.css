@@ -16,6 +16,32 @@
   --color-success-green: #28A745;  /* Standard for success messages */
 
   /*
+  * BACKGROUND GRADIENTS
+  * Decorative layered backgrounds
+  */
+  --bg-gradient-main:
+    radial-gradient(circle at top left, rgba(0, 230, 167, 0.10), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(240, 180, 0, 0.08), transparent 50%);
+
+  /* Softer version (for large surfaces like body) */
+  --bg-gradient-soft:
+    radial-gradient(circle at top left, rgba(0, 230, 167, 0.06), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(240, 180, 0, 0.05), transparent 40%);
+
+  /* Strong accent (hero sections / highlights) */
+  --bg-gradient-accent:
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 198, 0.18), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(240, 180, 0, 0.12), transparent 50%);
+
+  /* Green-focused glow */
+  --bg-gradient-green:
+    radial-gradient(circle at center, rgba(0, 230, 167, 0.12), transparent 60%);
+
+  /* Gold-focused glow */
+  --bg-gradient-gold:
+    radial-gradient(circle at center, rgba(240, 180, 0, 0.12), transparent 60%);
+
+  /*
    * RARITY COLORS
    */
   --color-rarity-common: #9E9E9E;
@@ -27,6 +53,46 @@
   --color-rarity-ancient: #EF9A69;
   --color-rarity-special: linear-gradient(to bottom, #A4047E 0%, #60243D 55%, #949344 100%);
   --color-rarity-limited: #280445;
+
+  /*
+  * RARITY TEXT GLOWS
+  */
+  --text-glow-rarity-common:
+    0 0 4px rgba(158, 158, 158, 0.25);
+
+  --text-glow-rarity-uncommon:
+    0 0 6px rgba(30, 179, 38, 0.35),
+    0 0 12px rgba(30, 179, 38, 0.2);
+
+  --text-glow-rarity-rare:
+    0 0 6px rgba(0, 149, 255, 0.4),
+    0 0 14px rgba(0, 149, 255, 0.25);
+
+  --text-glow-rarity-epic:
+    0 0 8px rgba(136, 54, 209, 0.45),
+    0 0 18px rgba(136, 54, 209, 0.3);
+
+  --text-glow-rarity-legendary:
+    0 0 8px rgba(236, 180, 76, 0.5),
+    0 0 20px rgba(236, 180, 76, 0.35);
+
+  --text-glow-rarity-mythical:
+    0 0 6px rgba(142, 12, 15, 0.5),
+    0 0 14px rgba(142, 12, 15, 0.35);
+
+  --text-glow-rarity-ancient:
+    0 0 8px rgba(239, 154, 105, 0.45),
+    0 0 18px rgba(239, 154, 105, 0.3);
+
+  /* Special (gradient → simulate glow using mixed tones) */
+  --text-glow-rarity-special:
+    0 0 10px rgba(164, 4, 126, 0.4),
+    0 0 20px rgba(148, 147, 68, 0.25);
+
+  /* Limited (dark → tighter glow to avoid blur) */
+  --text-glow-rarity-limited:
+    0 0 6px rgba(106, 0, 255, 0.45),
+    0 0 12px rgba(106, 0, 255, 0.3);
 
   /*
    * TIER COLORS
@@ -41,9 +107,61 @@
   --color-tier-x: #6A1B9A;
 
   /*
+  * TIER TEXT GLOWS
+  */
+  --text-glow-tier-d:
+    0 0 4px rgba(117, 117, 117, 0.25);
+
+  --text-glow-tier-c:
+    0 0 6px rgba(76, 175, 80, 0.35),
+    0 0 12px rgba(76, 175, 80, 0.2);
+
+  --text-glow-tier-b:
+    0 0 6px rgba(33, 150, 243, 0.4),
+    0 0 14px rgba(33, 150, 243, 0.25);
+
+  --text-glow-tier-a:
+    0 0 8px rgba(156, 39, 176, 0.45),
+    0 0 18px rgba(156, 39, 176, 0.3);
+
+  --text-glow-tier-s:
+    0 0 10px rgba(255, 193, 7, 0.55),
+    0 0 22px rgba(255, 193, 7, 0.4);
+
+  --text-glow-tier-ss:
+    0 0 12px rgba(255, 122, 0, 0.6),
+    0 0 26px rgba(255, 122, 0, 0.45);
+
+  --text-glow-tier-sss:
+    0 0 14px rgba(255, 59, 59, 0.7),
+    0 0 30px rgba(255, 59, 59, 0.5);
+
+  --text-glow-tier-x:
+    0 0 12px rgba(106, 27, 154, 0.6),
+    0 0 26px rgba(106, 27, 154, 0.45);
+
+  --text-glow-white:
+    0 0 4px rgba(255, 255, 255, 0.35),
+    0 0 10px rgba(255, 255, 255, 0.2);
+
+  /*
    * AVAILABILITY COLORS
    */
   --color-availability-unobtainable: #6A00FF;
+
+  /*
+  * HOVER STATES
+  */
+  --hover-bg-subtle: rgba(255, 255, 255, 0.03);
+  --hover-bg-muted: rgba(0, 230, 167, 0.06);
+  --hover-bg-accent: rgba(0, 230, 167, 0.12);
+  --hover-bg-strong: rgba(0, 230, 167, 0.18);
+
+  /* Gold variant (secondary actions) */
+  --hover-bg-gold: rgba(240, 180, 0, 0.10);
+
+  /* Elevated hover (cards / list items) */
+  --hover-bg-elevated: rgba(36, 46, 42, 0.6);
 
   /* 
    * SEMANTIC BACKGROUND COLORS
@@ -109,6 +227,7 @@
 /* Apply base styles to your app */
 body {
   background-color: var(--bg-primary);
+  background-image: var(--bg-gradient-soft);
   color: var(--text-primary);
   font-family: sans-serif; /* Recommended to set a base font */
   margin: 0;

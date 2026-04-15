@@ -1,5 +1,6 @@
 .accordionButton {
   background-color: var(--bg-secondary);
+  background-image: var(--bg-gradient-soft);
   border: 1px solid var(--border-default);
   color: var(--text-primary);
   cursor: pointer;
@@ -20,6 +21,11 @@
   outline: none;
 }
 
+.accordionButton:focus span:first-child,
+.accordionButton:hover span:first-child {
+  text-shadow: var(--text-glow-white);
+}
+
 .selectedAccordionButton {
   border-top-color: var(--color-green-glow);
   box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
@@ -27,6 +33,7 @@
 
 .selectedAccordionButton span:first-child {
   color: var(--color-green-glow);
+  text-shadow: var(--text-glow-rarity-uncommon);
 }
 
 .updateDate {
@@ -36,6 +43,7 @@
 
 .content {
   background-color: var(--bg-secondary);
+  background-image: var(--bg-gradient-soft);
   border: 1px solid var(--border-default);
   box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
   padding: 24px;

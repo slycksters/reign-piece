@@ -22,22 +22,6 @@
   overflow: hidden;
 }
 
-/* soft tier glow sweep (like UI energy field) */
-.tierRow::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    90deg,
-    var(--tier-color-glow),
-    transparent 45%
-  );
-
-  opacity: 0.12;
-  pointer-events: none;
-}
-
 /* =========================
    LABEL (tier indicator)
 ========================= */
@@ -54,17 +38,14 @@
   position: relative;
   overflow: hidden;
 
-  background: var(--bg-secondary);
+  background: var(--bg-gradient-main);
   border-right: 1px solid var(--border-default);
 
   /* CORE CHANGE: tier color text */
   color: var(--tier-color);
 
   /* MAIN GLOW (text-based like UI energy branding) */
-  text-shadow:
-    0 0 4px var(--tier-color-glow),
-    0 0 10px var(--tier-color-glow),
-    0 0 18px var(--tier-color-glow);
+  text-shadow: var(--tier-color-glow);
 
   transition: all 0.25s ease;
 }
@@ -161,4 +142,24 @@
 .empty {
   color: var(--text-muted);
   font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .tierRow {
+    flex-direction: column;
+  }
+
+  .tierLabel {
+    width: 100%;
+    min-width: unset;
+
+    border-right: none;
+    border-bottom: 1px solid var(--border-default);
+
+    padding: 6px 0;
+  }
+
+  .tierItems {
+    justify-content: flex-start;
+  }
 }

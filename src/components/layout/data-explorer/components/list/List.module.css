@@ -1,6 +1,6 @@
 /* Content css */
-.filterContainer {
-  
+.cardButton:hover .infoContainer .itemName {
+  text-shadow: var(--text-glow-white);
 }
 
 .imageContainer {

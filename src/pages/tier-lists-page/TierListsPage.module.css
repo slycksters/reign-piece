@@ -1,4 +1,5 @@
 .buttonGroup {
+  margin-top: 17px;
   justify-self: center;
 }
 
@@ -38,11 +39,7 @@
 
 /* ACTIVE STATE (MAIN GLOW) */
 .activeButton {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 230, 167, 0.18),
-    rgba(0, 0, 0, 0)
-  );
+  background-color: var(--bg-elevated);
 
   color: var(--text-primary);
 }

@@ -38,7 +38,7 @@ export const TierList = ({ data }) => {
               className={styles.tierRow}
               style={{
                 '--tier-color': tier.color,
-                '--tier-color-glow': `${tier.color}22`,
+                '--tier-color-glow': `${tier.textGlow}`,
               }}
             >
               {/* Tier Label */}
@@ -46,7 +46,7 @@ export const TierList = ({ data }) => {
                 className={styles.tierLabel}
                 style={{
                   '--tier-color': tier.color,
-                  '--tier-color-glow': `${tier.color}33`,
+                  '--tier-color-glow': `${tier.textGlow}`,
                 }}
               >
                 {tier.name}
