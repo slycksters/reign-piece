@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import { MAPPED_TRAITS } from '@data';
 import styles from './Traits.module.css';
@@ -26,21 +27,41 @@ export const Traits = () => {
         </p>
       </header>
 
-      {/* Grid Container */}
-      <div
+      {/* Animated List Container */}
+      <motion.div
         className={clsx(
           'grid grid-cols-1 md:grid-cols-2',
-          styles.traitList,
-          openList ? styles.openedList : '',
+          styles.traitList
         )}
+        initial={false}
+        animate={{
+          height: openList ? 'auto' : 0,
+          opacity: openList ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.6,
+          ease: 'easeInOut',
+        }}
+        style={{ overflow: 'hidden' }}
       >
         {MAPPED_TRAITS.map((t) => (
-          <div key={t.id} className={styles.traitItem}>
+          <motion.div
+            key={t.id}
+            layout
+            className={styles.traitItem}
+          >
             <div className={styles.traitItemHeader}>
               <h5 className={styles.traitItemTitle}>{t.name}</h5>
+
               <span className={styles.traitRarity}>
-                {t.availability ? t.availability.name + ' - ' : ''}
-                {`${t.rarity.name} ${t.chance ? '(' + (t.chance * 100).toFixed(t.chance < 0.01 ? 2 : 1) + '%)' : ''}`}
+                {t.availability ? `${t.availability.name} - ` : ''}
+                {`${t.rarity.name} ${
+                  t.chance
+                    ? '(' +
+                      (t.chance * 100).toFixed(t.chance < 0.01 ? 2 : 1) +
+                      '%)'
+                    : ''
+                }`}
               </span>
             </div>
 
@@ -50,6 +71,7 @@ export const Traits = () => {
                 {t.name !== 'None' && (
                   <p className={styles.sectionLabel}>Buffs</p>
                 )}
+
                 <div className={styles.buffList}>
                   {t.name === 'None' ? (
                     <span className={styles.traitItemDescription}>
@@ -74,16 +96,20 @@ export const Traits = () => {
                 <p className={styles.obtainmentText}>{t.obtainment}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <button
         className={styles.openListButton}
-        onClick={() => setOpenList(!openList)}
-        type={'button'}
+        onClick={() => setOpenList((v) => !v)}
+        type="button"
       >
-        <BsChevronDoubleDown className={clsx(styles.normalArrow, { [styles.rotated]: openList })} />
+        <BsChevronDoubleDown
+          className={clsx(styles.normalArrow, {
+            [styles.rotated]: openList,
+          })}
+        />
       </button>
     </article>
   );

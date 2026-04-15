@@ -2,7 +2,6 @@
   margin-top: 16px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-default);
-
   position: relative;
   overflow: hidden;
 }
@@ -13,16 +12,8 @@
   inset: 0;
 
   background:
-    radial-gradient(
-      circle at top left,
-      rgba(0, 230, 167, 0.10),
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(240, 180, 0, 0.08),
-      transparent 50%
-    );
+    radial-gradient(circle at top left, rgba(0, 230, 167, 0.10), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(240, 180, 0, 0.08), transparent 50%);
 
   pointer-events: none;
 }
@@ -30,7 +21,6 @@
 .rankHeader {
   padding: 16px;
   padding-bottom: 0;
-
   position: relative;
 }
 
@@ -39,7 +29,6 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
-
   text-shadow:
     0 0 6px rgba(240, 180, 0, 0.25),
     0 0 14px rgba(240, 180, 0, 0.15);
@@ -49,14 +38,11 @@
   color: var(--text-secondary);
   font-size: 14px;
   margin-top: 8px;
-
   opacity: 0.95;
 }
 
+/* IMPORTANT: no max-height anymore */
 .rankList {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease-in-out;
   position: relative;
 }
 
@@ -76,18 +62,9 @@
   pointer-events: none;
 }
 
-.openedList::before {
-  opacity: 1;
-}
-
-.openedList {
-  max-height: 1000px;
-}
-
 .rankItem {
   border-bottom: 1px solid var(--border-default);
   padding: 16px;
-
   transition: background 0.2s ease;
 }
 
@@ -109,12 +86,6 @@
   border-top: 1px solid var(--border-default);
 }
 
-/* Enable if array length is even */
-/* .rankItem:nth-last-child(-n + 2) {
-  border-bottom: none;
-} */
-
-/* Enable if array length is odd */
 .rankItem:last-child {
   border-bottom: none;
 }
@@ -146,13 +117,9 @@
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-
   color: var(--color-green-bright);
-
   margin-bottom: 8px;
-
   letter-spacing: 0.8px;
-
   text-shadow: 0 0 6px rgba(0, 230, 167, 0.25);
 }
 
@@ -175,7 +142,6 @@
 
 .requirementItem {
   color: var(--color-success-green);
-
   text-shadow: 0 0 6px rgba(40, 167, 69, 0.15);
 }
 
@@ -189,19 +155,15 @@
 
   padding: 8px;
   width: 100%;
-
   background: transparent;
 
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
-
+.openListButton:focus,
 .openListButton:hover {
   background: rgba(0, 230, 167, 0.06);
   box-shadow: inset 0 0 12px rgba(0, 230, 167, 0.08);
-}
-
-.openListButton:hover {
-  box-shadow: 0 0 8px rgba(232, 240, 235, 0.2) inset;
+  outline: none;
 }
 
 .normalArrow {

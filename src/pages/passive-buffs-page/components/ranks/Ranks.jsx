@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import { MAPPED_RANKS } from '@data';
 import { pluralizeText } from '@utils';
@@ -27,16 +28,26 @@ export const Ranks = () => {
         </p>
       </header>
 
-      {/* Grid Container */}
-      <div
+      {/* Animated container */}
+      <motion.div
         className={clsx(
           'grid grid-cols-1 md:grid-cols-2',
-          styles.rankList,
-          openList ? styles.openedList : '',
+          styles.rankList
         )}
+        initial={false}
+        animate={{
+          height: openList ? 'auto' : 0,
+          opacity: openList ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.35,
+          ease: 'easeInOut',
+        }}
+        style={{ overflow: 'hidden' }}
       >
         {MAPPED_RANKS.map((r) => (
-          <div
+          <motion.div
+            layout
             key={r.id}
             className={styles.rankItem}
             style={{ borderColor: 'var(--border-default)' }}
@@ -48,7 +59,7 @@ export const Ranks = () => {
                 {r.description}
               </span>
             ) : (
-              <div className={'grid grid-cols-2 gap-4'}>
+              <div className="grid grid-cols-2 gap-4">
                 {/* Buffs */}
                 <div className={styles.buffContainer}>
                   <p className={styles.sectionLabel}>Buffs</p>
@@ -69,7 +80,10 @@ export const Ranks = () => {
                   <p className={styles.sectionLabel}>Requirements</p>
                   <div className={styles.requirementList}>
                     {r.requirements.map((rr) => (
-                      <span key={`${rr.id}${rr.quantity}`} className={styles.requirementItem}>
+                      <span
+                        key={`${rr.id}${rr.quantity}`}
+                        className={styles.requirementItem}
+                      >
                         {rr.quantity} {pluralizeText(rr.name, rr.quantity)}
                       </span>
                     ))}
@@ -77,16 +91,20 @@ export const Ranks = () => {
                 </div>
               </div>
             )}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <button
         className={styles.openListButton}
-        onClick={() => setOpenList(!openList)}
-        type={'button'}
+        onClick={() => setOpenList((v) => !v)}
+        type="button"
       >
-        <BsChevronDoubleDown className={clsx(styles.normalArrow, { [styles.rotated]: openList })} />
+        <BsChevronDoubleDown
+          className={clsx(styles.normalArrow, {
+            [styles.rotated]: openList,
+          })}
+        />
       </button>
     </article>
   );

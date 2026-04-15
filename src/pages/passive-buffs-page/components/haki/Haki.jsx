@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { MAPPED_HAKIS } from '@data';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import styles from './Haki.module.css';
@@ -26,24 +27,38 @@ export const Haki = () => {
         </p>
       </header>
 
-      {/* Grid Container */}
-      <div
+      {/* Animated container */}
+      <motion.div
         className={clsx(
           'grid grid-cols-1 md:grid-cols-2',
-          styles.hakiList,
-          openList ? styles.openedList : '',
+          styles.hakiList
         )}
+        initial={false}
+        animate={{
+          height: openList ? 'auto' : 0,
+          opacity: openList ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.35,
+          ease: 'easeInOut',
+        }}
+        style={{ overflow: 'hidden' }}
       >
         {MAPPED_HAKIS.map((h) => (
-          <div key={h.id} className={styles.hakiItem}>
+          <motion.div
+            layout
+            key={h.id}
+            className={styles.hakiItem}
+          >
             <div className={styles.hakiItemHeader}>
               <h5 className={styles.hakiItemTitle}>{h.name}</h5>
             </div>
 
-            <div className={'grid grid-cols-2 gap-4'}>
+            <div className="grid grid-cols-2 gap-4">
               {/* Buffs */}
               <div className={styles.buffContainer}>
                 <p className={styles.sectionLabel}>Buffs</p>
+
                 <div className={styles.buffList}>
                   {Object.entries(h.stats).map(([key, value]) => (
                     <span key={key} className={styles.buffItem}>
@@ -59,22 +74,27 @@ export const Haki = () => {
               {/* Obtainment */}
               <div className={styles.obtainmentContainer}>
                 <p className={styles.sectionLabel}>Obtainment</p>
+
                 {h.obtainment.map((ho) => (
-                  <p key={ho} className={styles.obtainmentText}>{ho}</p>
+                  <p key={ho} className={styles.obtainmentText}>
+                    {ho}
+                  </p>
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <button
         className={styles.openListButton}
-        onClick={() => setOpenList(!openList)}
-        type={'button'}
+        onClick={() => setOpenList((v) => !v)}
+        type="button"
       >
         <BsChevronDoubleDown
-          className={clsx(styles.normalArrow, { [styles.rotated]: openList })}
+          className={clsx(styles.normalArrow, {
+            [styles.rotated]: openList,
+          })}
         />
       </button>
     </article>

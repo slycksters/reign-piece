@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import { MAPPED_VOWS } from '@data';
 import styles from './Vows.module.css';
@@ -26,22 +27,32 @@ export const Vows = () => {
         </p>
       </header>
 
-      {/* Grid Container */}
-      <div
-        className={clsx(
-          'grid grid-cols-1 md:grid-cols-2',
-          styles.vowList,
-          openList ? styles.openedList : '',
-        )}
+      {/* Animated container */}
+      <motion.div
+        className={clsx('grid grid-cols-1 md:grid-cols-2', styles.vowList)}
+        initial={false}
+        animate={{
+          height: openList ? 'auto' : 0,
+          opacity: openList ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.45,
+          ease: 'easeInOut',
+        }}
+        style={{ overflow: 'hidden' }}
       >
         {MAPPED_VOWS.map((v) => (
-          <div key={v.id} className={styles.vowItem}>
+          <motion.div
+            key={v.id}
+            layout
+            className={styles.vowItem}
+          >
             <div className={styles.vowItemHeader}>
               <h5 className={styles.vowItemTitle}>{v.name}</h5>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              {/* Left Column: Buffs, Special Effects, Debuffs */}
+              {/* Left Column */}
               <div className={styles.leftColumn}>
                 {/* Buffs */}
                 <div className={styles.section}>
@@ -91,6 +102,7 @@ export const Vows = () => {
                             </span>
                           ));
                         }
+
                         return (
                           <span key={key} className={styles.debuffItem}>
                             <span className={styles.statLabel}>
@@ -105,9 +117,9 @@ export const Vows = () => {
                 )}
               </div>
 
-              {/* Right Column: Methods */}
+              {/* Right Column */}
               <div className={styles.rightColumn}>
-                {/* Bind Method */}
+                {/* Binding Method */}
                 <div className={styles.section}>
                   <p className={styles.sectionLabel}>Binding Method</p>
                   <div className={styles.list}>
@@ -119,7 +131,7 @@ export const Vows = () => {
                   </div>
                 </div>
 
-                {/* Unbind Method */}
+                {/* Unbinding Method */}
                 <div className={styles.section}>
                   <p className={styles.sectionLabel}>Unbinding Method</p>
                   <div className={styles.list}>
@@ -132,16 +144,20 @@ export const Vows = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <button
         className={styles.openListButton}
-        onClick={() => setOpenList(!openList)}
-        type={'button'}
+        onClick={() => setOpenList((v) => !v)}
+        type="button"
       >
-        <BsChevronDoubleDown className={clsx(styles.normalArrow, { [styles.rotated]: openList })} />
+        <BsChevronDoubleDown
+          className={clsx(styles.normalArrow, {
+            [styles.rotated]: openList,
+          })}
+        />
       </button>
     </article>
   );

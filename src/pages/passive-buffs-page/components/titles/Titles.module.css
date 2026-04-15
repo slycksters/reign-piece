@@ -2,7 +2,6 @@
   margin-top: 32px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-default);
-
   position: relative;
   overflow: hidden;
 }
@@ -42,20 +41,22 @@
   opacity: 0.95;
 }
 
+/* ❌ REMOVE max-height system */
 .titleList {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease-in-out;
+  position: relative;
 }
 
-.openedList {
-  max-height: 2000px;
+.titleList::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
+/* items unchanged */
 .titleItem {
   border-bottom: 1px solid var(--border-default);
   padding: 16px;
-
   transition: background 0.2s ease;
 }
 
@@ -91,8 +92,7 @@
   }
 }
 
-/* Content Styling */
-
+/* content styling unchanged */
 .titleItemHeader {
   display: flex;
   justify-content: space-between;
@@ -119,13 +119,9 @@
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-
   color: var(--color-green-bright);
-
   margin-bottom: 8px;
-
   letter-spacing: 0.8px;
-
   text-shadow: 0 0 6px rgba(0, 230, 167, 0.25);
 }
 
@@ -161,15 +157,16 @@
 
   padding: 8px;
   width: 100%;
-
   background: transparent;
 
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
+.openListButton:focus,
 .openListButton:hover {
   background: rgba(0, 230, 167, 0.06);
   box-shadow: inset 0 0 12px rgba(0, 230, 167, 0.08);
+  outline: none;
 }
 
 .normalArrow {

@@ -43,13 +43,7 @@
 }
 
 .vowList {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease-in-out;
-}
-
-.openedList {
-  max-height: 1000px;
+  position: relative;
 }
 
 .vowItem {
@@ -185,9 +179,11 @@
   transition: background 0.2s ease;
 }
 
+.openListButton:focus,
 .openListButton:hover {
   background: rgba(0, 230, 167, 0.06);
   box-shadow: inset 0 0 12px rgba(0, 230, 167, 0.08);
+  outline: none;
 }
 
 .normalArrow {

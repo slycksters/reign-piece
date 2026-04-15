@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import { MAPPED_TITLES } from '@data';
 import styles from './Titles.module.css';
@@ -26,20 +27,34 @@ export const Titles = () => {
         </p>
       </header>
 
-      {/* Grid Container */}
-      <div
+      {/* Animated Grid Container */}
+      <motion.div
         className={clsx(
           'grid grid-cols-1 md:grid-cols-2',
-          styles.titleList,
-          openList ? styles.openedList : '',
+          styles.titleList
         )}
+        initial={false}
+        animate={{
+          height: openList ? 'auto' : 0,
+          opacity: openList ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.35,
+          ease: 'easeInOut',
+        }}
+        style={{ overflow: 'hidden' }}
       >
         {MAPPED_TITLES.map((t) => (
-          <div key={t.id} className={styles.titleItem}>
+          <motion.div
+            layout
+            key={t.id}
+            className={styles.titleItem}
+          >
             <div className={styles.titleItemHeader}>
               <h5 className={styles.titleItemTitle}>{t.name}</h5>
+
               <span className={styles.titleRarity}>
-                {t.availability ? t.availability.name + ' - ' : ''}
+                {t.availability ? `${t.availability.name} - ` : ''}
                 {t.rarity ? t.rarity.name : ''}
               </span>
             </div>
@@ -48,6 +63,7 @@ export const Titles = () => {
               {/* Buffs */}
               <div className={styles.buffContainer}>
                 <p className={styles.sectionLabel}>Buffs</p>
+
                 <div className={styles.buffList}>
                   {Object.entries(t.stats).map(([key, value]) => (
                     <span key={key} className={styles.buffItem}>
@@ -63,6 +79,7 @@ export const Titles = () => {
               {/* Requirements */}
               <div className={styles.requirementContainer}>
                 <p className={styles.sectionLabel}>Requirements</p>
+
                 <div className={styles.requirementList}>
                   {t.requirements.map((tr) => (
                     <span key={tr.name} className={styles.requirementItem}>
@@ -72,16 +89,20 @@ export const Titles = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <button
         className={styles.openListButton}
-        onClick={() => setOpenList(!openList)}
-        type={'button'}
+        onClick={() => setOpenList((v) => !v)}
+        type="button"
       >
-        <BsChevronDoubleDown className={clsx(styles.normalArrow, { [styles.rotated]: openList })} />
+        <BsChevronDoubleDown
+          className={clsx(styles.normalArrow, {
+            [styles.rotated]: openList,
+          })}
+        />
       </button>
     </article>
   );

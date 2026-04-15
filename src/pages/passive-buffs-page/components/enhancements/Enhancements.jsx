@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { MAPPED_PASSIVES } from '@data';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import styles from './Enhancements.module.css';
@@ -25,22 +26,34 @@ export const Enhancements = () => {
         </p>
       </header>
 
-      {/* Grid Container */}
-      <div
+      {/* Animated Grid Container */}
+      <motion.div
         className={clsx(
-          // 'grid grid-cols-1 md:grid-cols-2',
           'grid grid-cols-1 md:grid-cols-2',
-          styles.enhancementList,
-          openList ? styles.openedList : '',
+          styles.enhancementList
         )}
+        initial={false}
+        animate={{
+          height: openList ? 'auto' : 0,
+          opacity: openList ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.35,
+          ease: 'easeInOut',
+        }}
+        style={{ overflow: 'hidden' }}
       >
         {MAPPED_PASSIVES.map((e) => (
-          <div key={e.id} className={styles.enhancementItem}>
+          <motion.div
+            layout
+            key={e.id}
+            className={styles.enhancementItem}
+          >
             <div className={styles.enhancementItemHeader}>
               <h5 className={styles.enhancementItemTitle}>{e.name}</h5>
             </div>
 
-            <div className={'grid grid-cols-2 gap-4'}>
+            <div className="grid grid-cols-2 gap-4">
               {/* Buffs */}
               <div className={styles.buffContainer}>
                 <p className={styles.sectionLabel}>Buffs</p>
@@ -61,19 +74,19 @@ export const Enhancements = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-
-        <div className={styles.enhancementItemFiller}></div>
-      </div>
+      </motion.div>
 
       <button
         className={styles.openListButton}
-        onClick={() => setOpenList(!openList)}
-        type={'button'}
+        onClick={() => setOpenList((v) => !v)}
+        type="button"
       >
         <BsChevronDoubleDown
-          className={clsx(styles.normalArrow, { [styles.rotated]: openList })}
+          className={clsx(styles.normalArrow, {
+            [styles.rotated]: openList,
+          })}
         />
       </button>
     </article>
