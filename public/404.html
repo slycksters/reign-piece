@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Reign Piece - Redirecting...</title>
+    <script type="text/javascript">
+      // Get the path from the URL, excluding the base path '/reign-piece/'.
+      // Also handles potential query parameters.
+      const path = window.location.pathname.replace(/^\/reign-piece/, '');
+      const
+      params = window.location.search;
+
+      // Store the path to be redirected to in sessionStorage.
+      // This is more reliable than query parameters, which can get messy.
+      sessionStorage.redirect = path + params;
+
+      // Redirect to the root index.html. The script in index.html will handle the rest.
+      window.location.replace('/reign-piece/');
+    </script>
+  </head>
+  <body></body>
+</html>
