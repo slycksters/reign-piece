@@ -1,116 +1,51 @@
-import { useState } from 'react';
-import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { BsChevronDoubleDown } from 'react-icons/bs';
 import { MAPPED_TRAITS } from '@data';
-import styles from './Traits.module.css';
+import { formatCamelCase, formatPercentageOrNumber } from '@utils';
+import { CollapsibleSection } from '../collapsible-section';
 
-export const Traits = () => {
-  const [openList, setOpenList] = useState(false);
-
-  // Helper: overallDamage -> Overall Damage
-  const formatLabel = (key) =>
-    key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase());
-
-  // Helper: 0.25 -> 25%, 10 -> 10
-  const formatValue = (val) =>
-    val % 1 !== 0 ? `${Math.round(val * 100)}%` : val;
-
-  return (
-    <article className={styles.trait}>
-      <header className={styles.traitHeader}>
-        <h3 className={styles.traitHeaderTitle}>Traits</h3>
-        <p className={styles.traitHeaderDescription}>
-          Traits are powerful passives that can be rolled to further enhance
-          your character's capabilities. Some traits are rarer than others and
-          provide massive boosts.
-        </p>
-      </header>
-
-      {/* Animated List Container */}
-      <motion.div
-        className={clsx(
-          'grid grid-cols-1 md:grid-cols-2',
-          styles.traitList
-        )}
-        initial={false}
-        animate={{
-          height: openList ? 'auto' : 0,
-          opacity: openList ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.6,
-          ease: 'easeInOut',
-        }}
-        style={{ overflow: 'hidden' }}
-      >
-        {MAPPED_TRAITS.map((t) => (
-          <motion.div
-            key={t.id}
-            layout
-            className={styles.traitItem}
-          >
-            <div className={styles.traitItemHeader}>
-              <h5 className={styles.traitItemTitle}>{t.name}</h5>
-
-              <span className={styles.traitRarity}>
-                {t.availability ? `${t.availability.name} - ` : ''}
-                {`${t.rarity.name} ${
-                  t.chance
-                    ? '(' +
-                      (t.chance * 100).toFixed(t.chance < 0.01 ? 2 : 1) +
-                      '%)'
-                    : ''
-                }`}
+const renderTraitItem = (t, styles) => (
+  <motion.div key={t.id} layout className={styles.item}>
+    <div className={styles.itemHeader}>
+      <h5 className={styles.itemTitle}>{t.name}</h5>
+      <span className={styles.itemRarity}>
+        {t.availability ? `${t.availability.name} - ` : ''}
+        {`${t.rarity.name} ${
+          t.chance
+            ? `(${(t.chance * 100).toFixed(t.chance < 0.01 ? 2 : 1)}%)`
+            : ''
+        }`}
+      </span>
+    </div>
+    <div className="grid grid-cols-2 gap-4">
+      <div>
+        {t.name !== 'None' && <p className={styles.sectionLabel}>Buffs</p>}
+        <div className={styles.buffList}>
+          {t.name === 'None' ? (
+            <span className={styles.itemDescription}>{t.description}</span>
+          ) : (
+            Object.entries(t.stats).map(([key, value]) => (
+              <span key={key} className={styles.buffItem}>
+                <span className={styles.statLabel}>{formatCamelCase(key)}:</span>{' '}
+                {formatPercentageOrNumber(value)}
               </span>
-            </div>
+            ))
+          )}
+        </div>
+      </div>
+      <div>
+        <p className={styles.sectionLabel}>Obtainment</p>
+        <p className={styles.obtainmentText}>{t.obtainment}</p>
+      </div>
+    </div>
+  </motion.div>
+);
 
-            <div className="grid grid-cols-2 gap-4">
-              {/* Buffs */}
-              <div className={styles.buffContainer}>
-                {t.name !== 'None' && (
-                  <p className={styles.sectionLabel}>Buffs</p>
-                )}
-
-                <div className={styles.buffList}>
-                  {t.name === 'None' ? (
-                    <span className={styles.traitItemDescription}>
-                      {t.description}
-                    </span>
-                  ) : (
-                    Object.entries(t.stats).map(([key, value]) => (
-                      <span key={key} className={styles.buffItem}>
-                        <span className={styles.statLabel}>
-                          {formatLabel(key)}:
-                        </span>{' '}
-                        {formatValue(value)}
-                      </span>
-                    ))
-                  )}
-                </div>
-              </div>
-
-              {/* Obtainment */}
-              <div className={styles.obtainmentContainer}>
-                <p className={styles.sectionLabel}>Obtainment</p>
-                <p className={styles.obtainmentText}>{t.obtainment}</p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <button
-        className={styles.openListButton}
-        onClick={() => setOpenList((v) => !v)}
-        type="button"
-      >
-        <BsChevronDoubleDown
-          className={clsx(styles.normalArrow, {
-            [styles.rotated]: openList,
-          })}
-        />
-      </button>
-    </article>
-  );
-};
+export const Traits = () => (
+  <CollapsibleSection
+    title="Traits"
+    description="Traits are powerful passives that can be rolled to further enhance your character's capabilities. Some traits are rarer than others and provide massive boosts."
+    data={MAPPED_TRAITS}
+    renderItem={renderTraitItem}
+    animationDuration={0.6}
+  />
+);

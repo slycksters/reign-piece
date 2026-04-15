@@ -1,111 +1,51 @@
-import { useState } from 'react';
-import clsx from 'clsx';
-import { motion, AnimatePresence } from 'framer-motion';
-import { BsChevronDoubleDown } from 'react-icons/bs';
+import { motion } from 'framer-motion';
 import { MAPPED_RANKS } from '@data';
-import { pluralizeText } from '@utils';
-import styles from './Ranks.module.css';
+import { pluralizeText, formatCamelCase, formatPercentageOrNumber } from '@utils';
+import { CollapsibleSection } from '../collapsible-section';
 
-export const Ranks = () => {
-  const [openList, setOpenList] = useState(false);
-
-  // Helper: overallDamage -> Overall Damage
-  const formatLabel = (key) =>
-    key.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase());
-
-  // Helper: 0.25 -> 25%, 10 -> 10
-  const formatValue = (val) =>
-    val % 1 !== 0 ? `${Math.round(val * 100)}%` : val;
-
-  return (
-    <article className={styles.rank}>
-      <header className={styles.rankHeader}>
-        <h3 className={styles.rankHeaderTitle}>Ranks</h3>
-        <p className={styles.rankHeaderDescription}>
-          Ranks are the most important buff, as they provide the highest bonuses
-          with no drawbacks. You can upgrade your rank by speaking with Leafa,
-          who is located in West Mountain.
-        </p>
-      </header>
-
-      {/* Animated container */}
-      <motion.div
-        className={clsx(
-          'grid grid-cols-1 md:grid-cols-2',
-          styles.rankList
-        )}
-        initial={false}
-        animate={{
-          height: openList ? 'auto' : 0,
-          opacity: openList ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.35,
-          ease: 'easeInOut',
-        }}
-        style={{ overflow: 'hidden' }}
-      >
-        {MAPPED_RANKS.map((r) => (
-          <motion.div
-            layout
-            key={r.id}
-            className={styles.rankItem}
-            style={{ borderColor: 'var(--border-default)' }}
-          >
-            <h5 className={styles.rankItemTitle}>{r.name}</h5>
-
-            {r.name === 'None' ? (
-              <span className={styles.rankItemDescription}>
-                {r.description}
+const renderRankItem = (r, styles) => (
+  <motion.div layout key={r.id} className={styles.item}>
+    <h5 className={styles.itemTitle} style={{ marginBottom: '12px' }}>
+      {r.name}
+    </h5>
+    {r.name === 'None' ? (
+      <span className={styles.itemDescription}>{r.description}</span>
+    ) : (
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <p className={styles.sectionLabel}>Buffs</p>
+          <div className={styles.buffList}>
+            {Object.entries(r.stats).map(([key, value]) => (
+              <span key={key} className={styles.buffItem}>
+                <span className={styles.statLabel}>{formatCamelCase(key)}:</span>{' '}
+                {formatPercentageOrNumber(value)}
               </span>
-            ) : (
-              <div className="grid grid-cols-2 gap-4">
-                {/* Buffs */}
-                <div className={styles.buffContainer}>
-                  <p className={styles.sectionLabel}>Buffs</p>
-                  <div className={styles.buffList}>
-                    {Object.entries(r.stats).map(([key, value]) => (
-                      <span key={key} className={styles.buffItem}>
-                        <span className={styles.statLabel}>
-                          {formatLabel(key)}:
-                        </span>{' '}
-                        {formatValue(value)}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p className={styles.sectionLabel}>Requirements</p>
+          <div className={styles.requirementList}>
+            {r.requirements.map((rr) => (
+              <span
+                key={`${rr.id}${rr.quantity}`}
+                className={styles.requirementItem}
+              >
+                {rr.quantity} {pluralizeText(rr.name, rr.quantity)}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+  </motion.div>
+);
 
-                {/* Requirements */}
-                <div className={styles.requirementContainer}>
-                  <p className={styles.sectionLabel}>Requirements</p>
-                  <div className={styles.requirementList}>
-                    {r.requirements.map((rr) => (
-                      <span
-                        key={`${rr.id}${rr.quantity}`}
-                        className={styles.requirementItem}
-                      >
-                        {rr.quantity} {pluralizeText(rr.name, rr.quantity)}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <button
-        className={styles.openListButton}
-        onClick={() => setOpenList((v) => !v)}
-        type="button"
-      >
-        <BsChevronDoubleDown
-          className={clsx(styles.normalArrow, {
-            [styles.rotated]: openList,
-          })}
-        />
-      </button>
-    </article>
-  );
-};
+export const Ranks = () => (
+  <CollapsibleSection
+    title="Ranks"
+    description="Ranks are the most important buff, as they provide the highest bonuses with no drawbacks. You can upgrade your rank by speaking with Leafa, who is located in West Mountain."
+    data={MAPPED_RANKS}
+    renderItem={renderRankItem}
+  />
+);
