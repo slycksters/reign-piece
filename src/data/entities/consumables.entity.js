@@ -289,7 +289,7 @@ export const CONSUMABLES = [
   {
     id: 'los-lobos-fang',
     name: 'Los Lobos Fang',
-    type: 'material',
+    type: 'consumable',
     rarity: 'legendary',
     stackLimit: 500,
     tradeable: true,
@@ -307,7 +307,7 @@ export const CONSUMABLES = [
   {
     id: 'shadow-fragment',
     name: 'Shadow Fragment',
-    type: 'material',
+    type: 'consumable',
     rarity: 'legendary',
     stackLimit: 500,
     tradeable: true,
@@ -325,7 +325,7 @@ export const CONSUMABLES = [
   {
     id: 'ruby',
     name: 'Ruby',
-    type: 'material',
+    type: 'consumable',
     rarity: 'mythical',
     stackLimit: 500,
     tradeable: true,
