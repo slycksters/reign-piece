@@ -211,7 +211,7 @@ export const TRAITS = [
     id: 'blood-frenzy',
     name: 'Blood Frenzy',
     rarity: 'special',
-    tier: 'SSS',
+    tier: 'SS+',
     chance: 0.1,
     stats: {
       overallDamage: 0.4,
@@ -229,7 +229,7 @@ export const TRAITS = [
     id: 'martial-artist',
     name: 'Martial Artist',
     rarity: 'special',
-    tier: 'SSS',
+    tier: 'SS+',
     stats: {
       overallDamage: 0.465,
       damageReduction: 0.25,
@@ -243,7 +243,7 @@ export const TRAITS = [
     id: 'hollow-instinct',
     name: 'Hollow Instinct',
     rarity: 'special',
-    tier: 'SSS',
+    tier: 'SS+',
     chance: 0.05,
     stats: {
       overallDamage: 0.495,
@@ -275,6 +275,23 @@ export const TRAITS = [
     name: 'Lovebreaker',
     rarity: 'limited',
     tier: 'A',
+    availability: 'unobtainable',
+    chance: 0.05,
+    stats: {
+      overallDamage: 0.15,
+      damageReduction: 0.2,
+      movementSpeed: 0.2,
+      dashPower: 0.15,
+      experienceGain: 0.12,
+      fameGain: 0.175,
+    },
+    obtainment: 'Can be rolled using a Love Sigil',
+  },
+  {
+    id: 'manipulator',
+    name: 'Manipulator',
+    rarity: 'special',
+    tier: 'SSS',
     availability: 'unobtainable',
     chance: 0.05,
     stats: {

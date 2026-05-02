@@ -21,6 +21,10 @@
   outline: none;
 }
 
+.linkButton {
+  text-decoration: none !important;
+}
+
 /* Styled border button css */
 .styledBorders {
   position: relative;

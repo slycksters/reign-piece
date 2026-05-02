@@ -9,7 +9,7 @@ import styles from './FloatingNavbar.module.css';
 
 export const FloatingNavbar = () => {
   const { pathname } = useLocation();
-  const isMobile = useMediaQuery('(max-width: 900px)');
+  const isMobile = useMediaQuery('(max-width: 1023px)');
   const [open, setOpen] = useState(false);
 
   if ([`${BASE_PATH}/`, BASE_PATH].includes(pathname)) return null;
@@ -55,18 +55,18 @@ export const FloatingNavbar = () => {
         <NavLink
           className={getNavClass}
           onClick={handleNavigate}
-          to={PATHS.PASSIVE_BUFFS}
+          to={PATHS.ITEMS}
         >
-          Passive Buffs
+          Items
         </NavLink>
       </li>
       <li>
         <NavLink
           className={getNavClass}
           onClick={handleNavigate}
-          to={PATHS.ITEMS}
+          to={PATHS.PASSIVE_BUFFS}
         >
-          Items
+          Passive Buffs
         </NavLink>
       </li>
       <li>

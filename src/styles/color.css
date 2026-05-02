@@ -49,10 +49,10 @@
   --color-rarity-rare: #0095FF;
   --color-rarity-epic: #8836D1;
   --color-rarity-legendary: #ECB44C;
-  --color-rarity-mythical: #8E0C0F;
+  --color-rarity-mythical: #FF3B3B;
   --color-rarity-ancient: #EF9A69;
   --color-rarity-special: linear-gradient(to bottom, #A4047E 0%, #60243D 55%, #949344 100%);
-  --color-rarity-limited: #280445;
+  --color-rarity-limited: #5A2A8C;
 
   /*
   * RARITY TEXT GLOWS
@@ -221,6 +221,15 @@
   --border-strong:  var(--color-muted-ash);
   --divider:        var(--bg-elevated);
   --focus-ring:     var(--color-green-bright); /* For accessibility on inputs */
+
+  /*
+   * SEGMENT LEVELS
+   */
+  --power-1: #5E6C65; /* muted */
+  --power-2: #4CAF50; /* green */
+  --power-3: #2196F3; /* blue */
+  --power-4: #FF7A00; /* orange */
+  --power-5: #FF3B3B; /* red */
 }
 
 

@@ -14,18 +14,18 @@ const NAV_ITEMS = [
     path: `ABILITIES`,
   },
   {
-    id: 'passive-buffs',
-    title: 'Passive Buffs',
-    borderColor: 'var(--color-solar-gold)',
-    tags: ['Ranks', 'Race', 'Traits', 'Titles', 'Vows'],
-    path: `PASSIVE_BUFFS`,
-  },
-  {
     id: 'items',
     title: 'Items',
     borderColor: 'var(--color-success-green)',
     tags: ['Materials', 'Consumables', 'Accessories', 'Heirlooms'],
     path: `ITEMS`,
+  },
+  {
+    id: 'passive-buffs',
+    title: 'Passive Buffs',
+    borderColor: 'var(--color-solar-gold)',
+    tags: ['Ranks', 'Race', 'Traits', 'Titles', 'Vows'],
+    path: `PASSIVE_BUFFS`,
   },
   {
     id: 'tier-lists',
@@ -86,7 +86,7 @@ export const Navigation = () => {
           >
             {NAV_ITEMS.map((item) => (
               <div key={item.id} className={clsx(styles.listItem, 'w-full')}>
-                <NavLink to={PATHS[item.path]}>
+                <NavLink to={PATHS[item.path]} tabIndex={0}>
                   <Button
                     className={clsx(styles.listItemButton, 'h-full w-full')}
                     borderColor={item.borderColor}

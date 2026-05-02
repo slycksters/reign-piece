@@ -1,4 +1,5 @@
-import { DataExplorer, Header } from '@components';
+import { useParams } from 'react-router-dom';
+import { DataExplorer, Header, ItemDetail } from '@components';
 import {
   MAPPED_ACCESSORIES,
   MAPPED_CONSUMABLES,
@@ -6,9 +7,12 @@ import {
   MAPPED_HEIRLOOMS,
   MAPPED_MATERIALS,
 } from '@data';
+import { PATHS } from '@router';
 import styles from './ItemsPage.module.css';
 
 export const ItemsPage = () => {
+  const { itemId } = useParams();
+
   const combinedData = [
     ...MAPPED_MATERIALS,
     ...MAPPED_CONSUMABLES,
@@ -18,11 +22,18 @@ export const ItemsPage = () => {
   ];
   return (
     <>
-      <Header title={'Items'} />
-      <DataExplorer
-        data={combinedData}
-        sortOptions={['name', 'rarity', 'type', 'tradeable']}
-      />
+      {itemId ? (
+        <ItemDetail itemId={itemId} />
+      ) : (
+        <>
+          <Header title={'Items'} />
+          <DataExplorer
+            data={combinedData}
+            sortOptions={['name', 'rarity', 'type', 'tradeable']}
+            basePath={PATHS.ITEMS}
+          />
+        </>
+      )}
     </>
   );
 };

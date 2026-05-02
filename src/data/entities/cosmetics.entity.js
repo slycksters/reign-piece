@@ -4,62 +4,93 @@ export const COSMETICS = [
     name: 'Midnight Circlet',
     type: 'cosmetic',
     rarity: 'epic',
-    part: 'body',
+    part: 'head',
     availability: 'unobtainable',
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A dimly glowing circlet that hums under moonless skies. It cloaks the wearer in a quiet, ominous presence, as if their movements belong to the night itself.',
+    obtainments: [{ targetId: 'daily-spin' }],
   },
   {
     id: 'honoured-blindfold',
     name: 'Honoured Blindfold',
     type: 'cosmetic',
     rarity: 'legendary',
-    part: 'body',
+    part: 'head',
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A pristine blindfold worn by one who sees beyond sight. It carries an overwhelming sense of calm authority, masking power that distorts perception itself.',
+    obtainments: [{ targetId: 'toji-boss' }],
   },
   {
     id: 'balance-sigil',
     name: 'Balance Sigil',
     type: 'cosmetic',
     rarity: 'legendary',
-    part: 'body',
+    part: 'head',
     availability: 'unobtainable',
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A radiant mark etched with perfect symmetry. It emanates equilibrium, as though opposing forces bend instinctively toward harmony in its presence.',
+    obtainments: [{ targetId: 'daily-spin' }],
   },
   {
     id: 'gojo-glasses',
     name: `Gojo's Glasses`,
     type: 'cosmetic',
     rarity: 'mythical',
-    part: 'body',
+    part: 'head',
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A sleek pair of dark lenses concealing limitless perception. They radiate effortless confidence, hinting at power restrained only by choice.',
+    obtainments: [{ targetId: 'gojo-boss' }],
   },
   {
     id: 'void-helm',
     name: 'Void Helm',
     type: 'cosmetic',
     rarity: 'mythical',
-    part: 'body',
+    part: 'head',
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A hollow helm that swallows surrounding light. Its presence distorts space visually, giving the impression of an existence partially detached from reality.',
+    obtainments: [{ targetId: 'daily-spin' }],
   },
   {
     id: 'crown-of-infamy',
     name: 'Crown of Infamy',
     type: 'cosmetic',
     rarity: 'mythical',
-    part: 'body',
+    part: 'head',
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A tarnished crown shaped by notoriety rather than nobility. It projects a fearsome reputation, marking the wearer as one whose name carries weight across the world.',
+    obtainments: [{ targetId: 'fame' }],
+  },
+  {
+    id: 'moon-halo',
+    name: 'Moon Halo',
+    type: 'cosmetic',
+    rarity: 'mythical',
+    part: 'aura',
+    stackLimit: 999,
+    tradeable: true,
+    image: null,
+    description:
+      'A silent ring of pale lunar light that hovers above its bearer, echoing the calm authority of the night sky. Its presence radiates quiet dominance, as if the moon itself has chosen to follow your path.',
+    obtainments: [{ targetId: 'orihime' }],
   },
   {
     id: 'ironbound-shackles',
@@ -70,6 +101,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'Heavy restraints that symbolize power held in check. They echo the tension of suppressed strength, as if something dangerous waits beneath control.',
+    obtainments: [{ targetId: 'shinra-boss' }],
   },
   {
     id: 'nightfall-veil',
@@ -81,6 +115,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A flowing veil woven from deep twilight. It softens visibility and surrounds the wearer with a mysterious, fading silhouette.',
+    obtainments: [{ targetId: 'daily-spin' }],
   },
   {
     id: 'hourglass-mantle',
@@ -91,6 +128,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A mantle embedded with shifting grains of time. It gives the impression that moments stretch and compress subtly around the wearer.',
+    obtainments: [{ targetId: 'daily-streak' }],
   },
   {
     id: 'judicator-pauldrons',
@@ -102,6 +142,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'Ornate shoulder guards worn by those who pass judgment. They carry a commanding presence, as if every movement delivers silent verdicts.',
+    obtainments: [{ targetId: 'daily-spin' }],
   },
   {
     id: 'mark-of-the-wanted',
@@ -112,6 +155,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'Ornate shoulder guards worn by those who pass judgment. They carry a commanding presence, as if every movement delivers silent verdicts.',
+    obtainments: [{ targetId: 'fame' }],
   },
   {
     id: 'sukuna-cloak',
@@ -122,9 +168,12 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A cursed cloak steeped in ancient malice. It emanates an oppressive aura, as if the wearer stands above all who dare approach.',
+    obtainments: [{ targetId: 'malevolent-shrine-raid' }],
   },
   {
-    id: 'bloodaoth-cape',
+    id: 'bloodoath-cape',
     name: 'Bloodoath Cape',
     type: 'cosmetic',
     rarity: 'mythical',
@@ -132,6 +181,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A battle-worn cape bound by unbreakable vows. It carries the weight of promises forged in blood and never meant to be broken.',
+    obtainments: [{ targetId: 'blood-commander-raid' }],
   },
   {
     id: 'beru-wings-green',
@@ -142,6 +194,9 @@ export const COSMETICS = [
     stackLimit: 1,
     tradeable: false,
     image: null,
+    description:
+      'A pair of chitinous wings radiating predatory dominance. Their presence evokes absolute loyalty and the overwhelming authority of a shadow commander.',
+    obtainments: [{ targetId: 'beru-world-boss' }],
   },
   {
     id: 'beru-wings-golden',
@@ -152,6 +207,9 @@ export const COSMETICS = [
     stackLimit: 1,
     tradeable: false,
     image: null,
+    description:
+      'A pair of chitinous wings radiating predatory dominance. Their presence evokes absolute loyalty and the overwhelming authority of a shadow commander.',
+    obtainments: [{ targetId: 'beru-world-boss' }],
   },
   {
     id: 'beru-wings-red',
@@ -162,6 +220,9 @@ export const COSMETICS = [
     stackLimit: 1,
     tradeable: false,
     image: null,
+    description:
+      'A pair of chitinous wings radiating predatory dominance. Their presence evokes absolute loyalty and the overwhelming authority of a shadow commander.',
+    obtainments: [{ targetId: 'beru-world-boss' }],
   },
   {
     id: 'beru-wings-blue',
@@ -172,6 +233,9 @@ export const COSMETICS = [
     stackLimit: 1,
     tradeable: false,
     image: null,
+    description:
+      'A pair of chitinous wings radiating predatory dominance. Their presence evokes absolute loyalty and the overwhelming authority of a shadow commander.',
+    obtainments: [{ targetId: 'beru-world-boss' }],
   },
   {
     id: 'beru-wings-purple',
@@ -182,6 +246,9 @@ export const COSMETICS = [
     stackLimit: 1,
     tradeable: false,
     image: null,
+    description:
+      'A pair of chitinous wings radiating predatory dominance. Their presence evokes absolute loyalty and the overwhelming authority of a shadow commander.',
+    obtainments: [{ targetId: 'beru-world-boss' }],
   },
   {
     id: 'heartbound',
@@ -193,6 +260,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A soft, radiant charm bound by emotional ties. It emits a warm presence that lingers like an unspoken promise.',
+    obtainments: [{ targetId: 'cupid-market' }],
   },
   {
     id: 'shadowoath-cape',
@@ -204,6 +274,35 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A dark mantle woven from shadow-bound contracts. It carries a silent intensity, as if every movement is guided by unseen allegiance.',
+    obtainments: [{ targetId: 'blood-commander-raid' }],
+  },
+  {
+    id: 'crimson-fangs',
+    name: 'Crimson Fangs',
+    type: 'cosmetic',
+    rarity: 'mythical',
+    part: 'body',
+    stackLimit: 999,
+    tradeable: true,
+    image: null,
+    description:
+      'Manifested from primal hunger, these blood-tinted fangs embody relentless aggression. They mark the wearer as a predator—one who thrives in close combat and leaves nothing but ruin behind.',
+    obtainments: [{ targetId: 'orihime' }],
+  },
+  {
+    id: 'sovereign-crystal',
+    name: 'Sovereign Crystal',
+    type: 'cosmetic',
+    rarity: 'mythical',
+    part: 'aura',
+    stackLimit: 999,
+    tradeable: true,
+    image: null,
+    description:
+      'A radiant shard that orbits its bearer with regal intent, pulsing with the authority of a true ruler. Its glow reflects absolute control, as if reality itself bends in acknowledgment.',
+    obtainments: [{ targetId: 'orihime' }],
   },
   {
     id: 'moonless-aura',
@@ -215,6 +314,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A faint, drifting aura that absorbs surrounding light. It creates the illusion of movement within darkness itself.',
+    obtainments: [{ targetId: 'daily-spin' }],
   },
   {
     id: 'voidwalker-aura',
@@ -225,6 +327,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A shifting void-like presence that flickers unpredictably. It gives the sense that the wearer exists between spaces rather than within them.',
+    obtainments: [{ targetId: 'killua-boss' }],
   },
   {
     id: 'eternal-sand',
@@ -235,6 +340,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'Golden grains swirl endlessly around the wearer. Each particle moves with purpose, as if guided by unseen time itself.',
+    obtainments: [{ targetId: 'daily-streak' }],
   },
   {
     id: 'verdict-pulse',
@@ -246,6 +354,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'Golden grains swirl endlessly around the wearer. Each particle moves with purpose, as if guided by unseen time itself.',
+    obtainments: [{ targetId: 'daily-spin' }],
   },
   {
     id: 'slasher-aura',
@@ -256,6 +367,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A jagged, unstable aura that flickers violently. It radiates relentless aggression, as if constantly seeking its next strike.',
+    obtainments: [{ targetId: 'slasher-boss' }],
   },
   {
     id: 'compass-aura',
@@ -266,6 +380,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A rotating aura marked by directional flow. It subtly aligns itself, giving the impression that all movement follows a destined path.',
+    obtainments: [{ targetId: 'infinity-castle-raid' }],
   },
   {
     id: 'eternal-darkness',
@@ -276,6 +393,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A dense, engulfing aura that consumes all surrounding light. It creates a void where presence alone feels overwhelming.',
+    obtainments: [{ targetId: 'daily-spin' }],
   },
   {
     id: 'infamous-presence',
@@ -286,9 +406,11 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description: `An oppressive aura fueled by reputation alone. It lingers heavily, as if the world itself recognizes the wearer's name.`,
+    obtainments: [{ targetId: 'fame' }],
   },
   {
-    id: 'cosmetic-bloodlust',
+    id: 'bloodlust-cosmetic',
     name: 'Bloodlust',
     type: 'cosmetic',
     rarity: 'mythical',
@@ -297,6 +419,9 @@ export const COSMETICS = [
     stackLimit: 1,
     tradeable: false,
     image: null,
+    description:
+      'A violent aura that surges with raw killing intent. It flickers erratically, mirroring the instinct to destroy without hesitation.',
+    obtainments: [{ targetId: 'reanimated-toji-boss' }],
   },
   {
     id: 'king-aura',
@@ -307,6 +432,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A dominant aura that bends the atmosphere around it. It exudes authority so absolute that lesser presence seems to fade away.',
+    obtainments: [{ targetId: 'malevolent-shrine-raid' }],
   },
   {
     id: 'divine-aura',
@@ -317,6 +445,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A radiant aura that shines with overwhelming purity. Its presence feels distant and untouchable, like something beyond mortal reach.',
+    obtainments: [{ targetId: 'mahoraga-divine-aura-seller' }],
   },
   {
     id: '67-aura',
@@ -328,6 +459,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A radiant aura that shines with overwhelming purity. Its presence feels distant and untouchable, like something beyond mortal reach.',
+    obtainments: [{ targetId: '67-boss' }],
   },
   {
     id: 'commander-aura',
@@ -338,6 +472,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A disciplined aura that moves with structured intent. It reflects leadership and control, as if guiding unseen forces into formation.',
+    obtainments: [{ targetId: 'blood-commander-raid' }],
   },
   {
     id: 'shadow-aura',
@@ -348,6 +485,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A flowing aura that spreads like living darkness. It clings to movement, trailing behind as if alive.',
+    obtainments: [{ targetId: 'double-dungeon-raid' }],
   },
   {
     id: 'monarch-aura',
@@ -358,6 +498,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A vast and overwhelming aura that radiates supremacy. It carries the weight of a ruler whose presence cannot be ignored.',
+    obtainments: [{ targetId: 'double-dungeon-raid' }],
   },
   {
     id: 'blood-aura',
@@ -368,6 +511,9 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A deep crimson aura that pulses like flowing life. It radiates violent intensity and relentless hunger.',
+    obtainments: [{ targetId: 'gyutaro-boss' }],
   },
   {
     id: 'murcielago-aura',
@@ -378,6 +524,35 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A cold, bat-like aura that expands into empty space. It feels hollow and distant, as if stripped of all emotion.',
+    obtainments: [{ targetId: 'ulquiorra-boss' }],
+  },
+  {
+    id: 'eminence-aura',
+    name: 'Eminence Aura',
+    type: 'cosmetic',
+    rarity: 'mythical',
+    part: 'aura',
+    stackLimit: 999,
+    tradeable: true,
+    image: null,
+    description:
+      'A subtle yet overwhelming aura that conceals its true depth. It gives the impression that far greater power lies hidden beneath restraint.',
+    obtainments: [{ targetId: 'shadow-boss' }],
+  },
+  {
+    id: 'transcendent-aura',
+    name: 'Transcendent Aura',
+    type: 'cosmetic',
+    rarity: 'mythical',
+    part: 'aura',
+    stackLimit: 999,
+    tradeable: true,
+    image: null,
+    description:
+      'A refined aura that surpasses conventional limits. It feels elevated, as if existing beyond ordinary understanding.',
+    obtainments: [{ targetId: 'aizen-boss' }],
   },
   {
     id: 'love-perfume',
@@ -389,6 +564,12 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A refined aura that surpasses conventional limits. It feels elevated, as if existing beyond ordinary understanding.',
+    obtainments: [
+      { targetId: 'boa-hancock-boss' },
+      { targetId: 'cupid-market' },
+    ],
   },
   {
     id: 'black-commander-aura',
@@ -400,5 +581,60 @@ export const COSMETICS = [
     stackLimit: 999,
     tradeable: true,
     image: null,
+    description:
+      'A darker variant of command presence, radiating authority through fear rather than order. It feels absolute and unyielding.',
+    obtainments: [{ targetId: 'blood-commander-raid' }],
+  },
+  {
+    id: 'sovereign-eminence-aura',
+    name: 'Sovereign Eminence Aura',
+    type: 'cosmetic',
+    rarity: 'limited',
+    part: 'aura',
+    stackLimit: 999,
+    tradeable: true,
+    image: null,
+    description:
+      'A supreme aura that merges dominance and concealment. It radiates quiet superiority, as if the true extent of its power is deliberately hidden.',
+    obtainments: [{ targetId: 'sovereign-shadow-boss' }],
+  },
+  {
+    id: 'crimson-aura',
+    name: 'Crimson Aura',
+    type: 'cosmetic',
+    rarity: 'mythical',
+    part: 'aura',
+    stackLimit: 999,
+    tradeable: true,
+    image: null,
+    description:
+      'A violent surge of scarlet energy that erupts from within, staining the air with raw hostility. It embodies unchecked fury, flaring brighter with every act of destruction.',
+    obtainments: [{ targetId: 'orihime' }],
+  },
+  {
+    id: 'hollow-aura',
+    name: 'Hollow Aura',
+    type: 'cosmetic',
+    rarity: 'mythical',
+    part: 'aura',
+    stackLimit: 999,
+    tradeable: true,
+    image: null,
+    description:
+      'An unsettling presence that distorts the space around its bearer, carrying the emptiness of something that should not exist. Its energy feels incomplete—yet overwhelmingly dangerous.',
+    obtainments: [{ targetId: 'orihime' }],
+  },
+  {
+    id: 'void-aura',
+    name: 'Void Aura',
+    type: 'cosmetic',
+    rarity: 'mythical',
+    part: 'aura',
+    stackLimit: 999,
+    tradeable: true,
+    image: null,
+    description:
+      'A consuming darkness that swallows light and sound alike, leaving only silence in its wake. It represents the absolute end—where all power is reduced to nothingness.',
+    obtainments: [{ targetId: 'orihime' }],
   },
 ];

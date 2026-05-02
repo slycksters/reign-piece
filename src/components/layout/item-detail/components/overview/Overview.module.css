@@ -1,0 +1,50 @@
+.overview {
+  border-top: 1px solid var(--border-default);
+  border-right: 1px solid var(--border-default);
+  padding: 16px;
+}
+
+@media (max-width: 1023px) {
+  .overview {
+    border-right: none;
+  }
+}
+
+.overviewTitle {
+  font-weight: 600;
+}
+
+.detailGroup {
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.detailGroup:first-child {
+  margin-top: 12px;
+}
+
+.detailGroup:last-child {
+  border: none;
+}
+
+.label {
+  color: var(--text-secondary);
+}
+
+.value {
+  color: var(--text-accent);
+  font-weight: 600;
+}
+
+.rarityValue {
+  background-color: color-mix(in srgb, var(--color) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color) 25%, transparent);
+  color: var(--color);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 8px;
+}

@@ -1,0 +1,12 @@
+.content {
+  background: var(--bg-gradient-soft);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  margin-top: 22px;
+}
+
+.notFound {
+  text-align: center;
+  color: var(--text-secondary);
+  /* margin-top: 1rem; */
+}

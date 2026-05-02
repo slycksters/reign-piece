@@ -1,0 +1,51 @@
+.stats {
+  border-top: 1px solid var(--border-default);
+  padding: 16px;
+}
+
+.statsTitle {
+  font-weight: 600;
+}
+
+.statsDetails {
+  margin-top: 18px;
+}
+
+.statsGroup {
+  margin-bottom: 12px;
+}
+
+.statGroupTitle {
+  color: var(--text-accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.buffList {
+  padding-top: 6px;
+}
+
+.buffItem,
+.debuffItem,
+.specialItem {
+  font-size: 14px;
+  display: block;
+}
+
+.buffItem + .buffItem,
+.debuffItem + .debuffItem,
+.specialItem + .specialItem {
+  margin-top: 3px;
+}
+
+.specialItem {
+  color: var(--color-solar-gold);
+}
+
+.debuffItem {
+  color: var(--color-danger-red);
+}
+
+.statLabel {
+  color: var(--text-secondary);
+}

@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { Header } from '@components';
 import {
   MAPPED_DEVIL_FRUITS,
+  MAPPED_RACES,
   MAPPED_SPECS,
   MAPPED_TRAITS,
   MAPPED_WEAPONS,
@@ -18,6 +19,10 @@ export const TierListsPage = () => {
     abilities: {
       name: 'Abilities',
       data: ABILITIES,
+    },
+    races: {
+      name: 'Races',
+      data: MAPPED_RACES,
     },
     traits: {
       name: 'Traits',

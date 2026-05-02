@@ -1,0 +1,18 @@
+.analysis {
+  border-top: 1px solid var(--border-default);
+  border-right: 1px solid var(--border-default);
+  padding: 16px;
+}
+
+.analysisTitle {
+  font-weight: 600;
+}
+
+.analysisDetails {
+  margin-top: 12px;
+}
+
+.analysisDetails p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}

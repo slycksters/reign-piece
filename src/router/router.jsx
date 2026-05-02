@@ -20,8 +20,10 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <LandingPage /> },
       { path: PATHS.ABILITIES, element: <AbilitiesPage /> },
+      { path: `${PATHS.ABILITIES}/:itemId`, element: <AbilitiesPage /> },
       { path: PATHS.PASSIVE_BUFFS, element: <PassiveBuffsPage /> },
       { path: PATHS.ITEMS, element: <ItemsPage /> },
+      { path: `${PATHS.ITEMS}/:itemId`, element: <ItemsPage /> },
       { path: PATHS.TIER_LISTS, element: <TierListsPage /> },
       { path: PATHS.RECOMMENDED_BUILDS, element: <RecommendedBuildsPage /> },
       { path: PATHS.GAME_MECHANICS, element: <GameMechanicsPage /> },

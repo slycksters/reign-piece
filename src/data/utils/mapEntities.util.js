@@ -82,3 +82,5 @@ export const MAPPED_TRAITS = FINAL_DATA.filter(i => ENTITIES.TRAITS.some(t => t.
 export const MAPPED_VOWS = FINAL_DATA.filter(i => ENTITIES.VOWS.some(v => v.id === i.id));
 export const MAPPED_HAKIS = FINAL_DATA.filter(i => ENTITIES.HAKIS.some(h => h.id === i.id));
 export const MAPPED_PASSIVES = FINAL_DATA.filter(i => ENTITIES.PASSIVES.some(p => p.id === i.id));
+
+export const ALL_MAPPED_ITEMS = FINAL_DATA.filter(i => i.type);

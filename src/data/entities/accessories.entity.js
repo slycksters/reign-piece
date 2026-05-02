@@ -11,6 +11,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A gravity-tuned mantle worn by a blind admiral who bends force itself. It stabilizes the wearer’s stance under pressure while subtly reinforcing controlled power output during combat.',
+    obtainments: [{ targetId: 'fujitora-boss' }],
   },
   {
     id: 'mihawk-cross',
@@ -24,6 +27,8 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description: `A precision-forged insignia associated with the world's greatest swordsman. It sharpens combat awareness and reinforces disciplined execution, allowing attacks to land with refined accuracy and controlled force.`,
+    obtainments: [{ targetId: 'mihawk-boss' }],
   },
   {
     id: 'zenitsu-haori',
@@ -38,6 +43,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A lightning-stained haori imbued with residual thunder-breathing resonance. It sharpens reflexive combat response, allowing sudden bursts of overwhelming speed and precision when instinct overrides hesitation.',
+    obtainments: [{ targetId: 'zenitsu-boss' }],
   },
   {
     id: 'yuji-uniform',
@@ -51,6 +59,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A reinforced combat uniform imbued with lingering cursed resilience. It strengthens frontline endurance and enhances sustained close-quarters engagement, allowing the wearer to maintain offensive pressure even under extreme damage.',
+    obtainments: [{ targetId: 'yuji-itadori-boss' }],
   },
   {
     id: 'shinra-hat',
@@ -64,6 +75,8 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description: `A scorched firefighter's cap that carries the lingering heat of ignition-born speed. It subtly accelerates movement response, as if the wearer's body reacts before thought takes shape.`,
+    obtainments: [{ targetId: 'shinra-boss' }],
   },
   {
     id: 'shank-strawhat',
@@ -77,6 +90,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A weathered strawhat passed down through a pirate legacy, symbolizing unbroken resolve. It enhances combat presence, reinforcing confidence that steadies allies and sharpens offensive intent.',
+    obtainments: [{ targetId: 'shanks-boss' }],
   },
   {
     id: 'toji-worm',
@@ -90,6 +106,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A cursed storage entity bound to a masterless killer. It warps the flow of cursed energy around the wearer, enabling sudden weapon manifestation and unpredictable combat transitions.',
+    obtainments: [{ targetId: 'shinra-boss' }],
   },
   {
     id: 'kaigaku-haori',
@@ -103,6 +122,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A thunder-tainted haori fractured by ambition and betrayal. It amplifies aggressive output at the cost of instability, converting hesitation into volatile lightning-strike power.',
+    obtainments: [{ targetId: 'kaigaku-boss' }],
   },
   {
     id: 'kite-outfit',
@@ -117,6 +139,8 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description: `A worn hunter's attire marked by survival and unpredictability. It resonates with adaptive combat instincts, subtly shifting the wearer's advantage during prolonged engagements.`,
+    obtainments: [{ targetId: 'kite-boss' }],
   },
   {
     id: 'sukuna-flesh',
@@ -130,6 +154,8 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description: `A fragment of the King of Curses' physical essence, still pulsating with oppressive authority. It amplifies destructive intent, allowing raw power to overwhelm conventional restraint.`,
+    obtainments: [{ targetId: 'sukuna-boss' }],
   },
   {
     id: 'aokiji-mask',
@@ -143,6 +169,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A cold-forged mask imbued with glacial suppression. It dampens surrounding hostility while reinforcing calm judgment, allowing power to be released with controlled precision.',
+    obtainments: [{ targetId: 'game-shop' }],
   },
   {
     id: 'kirito-coat',
@@ -156,6 +185,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A dark duel coat shaped by countless virtual battles. It enhances dual-wield responsiveness and improves reaction timing in high-speed combat sequences.',
+    obtainments: [{ targetId: 'kirito-boss' }],
   },
   {
     id: 'tengen-outfit',
@@ -170,6 +202,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A flamboyant battle ensemble infused with rhythmic combat discipline. It enhances synchronized strikes and amplifies explosive tempo shifts in melee exchanges.',
+    obtainments: [{ targetId: 'tengen-boss' }],
   },
   {
     id: 'meruem-armor',
@@ -184,6 +219,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A sovereign exoshell forged under evolutionary dominance. It reinforces physical supremacy and refines instinctive calculation during combat adaptation.',
+    obtainments: [{ targetId: 'meruem-boss' }],
   },
   {
     id: 'killua-fiat',
@@ -197,6 +235,8 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description: `A lightweight assassin's attire charged with electrical agility. It sharpens reflex execution and enhances rapid directional changes in combat flow.`,
+    obtainments: [{ targetId: 'killua-boss' }],
   },
   {
     id: 'gojo-uniform',
@@ -211,6 +251,8 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description: `A sorcerer's attire saturated with boundless cursed refinement. It stabilizes overwhelming output while maintaining absolute control over spatial combat pressure.`,
+    obtainments: [{ targetId: 'gojo-boss' }],
   },
   {
     id: 'sukuna-kimono',
@@ -225,6 +267,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A regal cursed garment woven with ancient malice. It amplifies overwhelming dominance in combat, embodying the arrogance of a calamity that never yields.',
+    obtainments: [{ targetId: 'malevolent-shrine-raid' }],
   },
   {
     id: 'bloodoath-armor',
@@ -239,6 +284,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A pact-forged armor soaked in battlefield vows. It strengthens offensive and defensive parity, rewarding aggression with sustained survivability.',
+    obtainments: [{ targetId: 'blood-commander-raid' }],
   },
   {
     id: 'sung-jin-woo-outfit',
@@ -253,6 +301,8 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description: `A shadow-infused hunter's attire that echoes the rise of an immortal monarch. It enhances scaling combat growth, growing stronger as battles intensify.`,
+    obtainments: [{ targetId: 'double-dungeon-raid' }],
   },
   {
     id: 'beru-armor-green',
@@ -268,6 +318,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'An ant-king war shell derived from a loyal shadow commander. It embodies absolute loyalty and overwhelming combat efficiency, adapting instinctively to threats.',
+    obtainments: [{ targetId: 'beru-world-boss' }],
   },
   {
     id: 'beru-armor-golden',
@@ -283,6 +336,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'An ant-king war shell derived from a loyal shadow commander. It embodies absolute loyalty and overwhelming combat efficiency, adapting instinctively to threats.',
+    obtainments: [{ targetId: 'beru-world-boss' }],
   },
   {
     id: 'beru-armor-red',
@@ -298,6 +354,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'An ant-king war shell derived from a loyal shadow commander. It embodies absolute loyalty and overwhelming combat efficiency, adapting instinctively to threats.',
+    obtainments: [{ targetId: 'beru-world-boss' }],
   },
   {
     id: 'beru-armor-blue',
@@ -313,6 +372,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'An ant-king war shell derived from a loyal shadow commander. It embodies absolute loyalty and overwhelming combat efficiency, adapting instinctively to threats.',
+    obtainments: [{ targetId: 'beru-world-boss' }],
   },
   {
     id: 'beru-armor-purple',
@@ -328,6 +390,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'An ant-king war shell derived from a loyal shadow commander. It embodies absolute loyalty and overwhelming combat efficiency, adapting instinctively to threats.',
+    obtainments: [{ targetId: 'beru-world-boss' }],
   },
   {
     id: 'slasher-outfit',
@@ -342,6 +407,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A brutal combat garb soaked in relentless pursuit energy. It strengthens offensive pressure while rewarding continuous engagement without retreat.',
+    obtainments: [{ targetId: 'slasher-boss' }],
   },
   {
     id: 'gyutaro-fit',
@@ -356,6 +424,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A cursed twin-born attire steeped in blood resentment. It amplifies destructive output through shared malice and synchronized lethal intent.',
+    obtainments: [{ targetId: 'gyutaro-boss' }],
   },
   {
     id: 'ulquiorra-uniform',
@@ -369,6 +440,54 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A hollowed battle suit devoid of emotional resonance. It enhances precision-based power release while suppressing unnecessary energy dispersion.',
+    obtainments: [{ targetId: 'ulquiorra-boss' }],
+  },
+  {
+    id: 'starrk-coat',
+    name: `Starrk's Coat`,
+    type: 'accessory',
+    rarity: 'mythical',
+    stats: {
+      power: 4900,
+      defense: 4450,
+    },
+    stackLimit: 3,
+    tradeable: true,
+    image: null,
+    description: `A lone wolf's mantle carrying the weight of divided solitude. It increases sustained ranged output while reducing emotional combat fluctuation.`,
+    obtainments: [{ targetId: 'las-noches-raid' }],
+  },
+  {
+    id: 'shadow-outfit',
+    name: `Shadow's Outfit`,
+    type: 'accessory',
+    rarity: 'mythical',
+    stats: {
+      sword: 5650,
+      defense: 4750,
+    },
+    stackLimit: 3,
+    tradeable: true,
+    image: null,
+    description: `A void-touched assassin's attire shaped by perfected stealth doctrine. It enhances critical execution and reduces detection during movement phases.`,
+    obtainments: [{ targetId: 'shadow-boss' }],
+  },
+  {
+    id: 'aizen-coat',
+    name: `Aizen's Coat`,
+    type: 'accessory',
+    rarity: 'mythical',
+    stats: {
+      power: 5450,
+      defense: 4900,
+    },
+    stackLimit: 3,
+    tradeable: true,
+    image: null,
+    description: `A transcendent commander's coat woven with illusionary authority. It reinforces perception control and stabilizes overwhelming spiritual output.`,
+    obtainments: [{ targetId: 'aizen-boss' }],
   },
   {
     id: 'mahoraga-wheel',
@@ -380,10 +499,31 @@ export const ACCESSORIES = [
       power: 3500,
       sword: 3500,
       defense: 3500,
+      specialEffect:
+        'Every 64 Seconds, the user gains 25% power for 32 seconds',
     },
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A cursed adaptation engine that rotates through inevitability itself. It strengthens survivability by evolving resistance against repeated threats.',
+    obtainments: [{ targetId: 'mahoraga-world-boss' }],
+  },
+  {
+    id: 'sovereign-shadow-outfit',
+    name: `Sovereign Shadow's Outfit`,
+    type: 'accessory',
+    rarity: 'limited',
+    stats: {
+      sword: 7500,
+      defense: 5000,
+    },
+    stackLimit: 3,
+    tradeable: true,
+    image: null,
+    description:
+      'A shadow mantle forged from absolute dominion. It amplifies command presence over shadows and reinforces elite-tier combat scaling.',
+    obtainments: [{ targetId: 'sovereign-shadow-boss' }],
   },
   {
     id: 'toji-fit',
@@ -399,6 +539,8 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description: `A minimalist assassin's attire optimized for cursed energy nullification. It enhances physical lethality by removing reliance on supernatural reinforcement.`,
+    obtainments: [{ targetId: 'reanimated-toji-boss' }],
   },
   {
     id: 'nicholas-outfit',
@@ -414,6 +556,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A festive relic of forgotten celebration, now bound with lingering seasonal essence. It grants moderate resilience and symbolic luck during rare encounters.',
+    obtainments: [{ targetId: 'festive-chest' }],
   },
   {
     id: 'cupid-wings',
@@ -429,6 +574,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A fractured pair of ethereal wings once tied to fleeting affection. It lightly enhances mobility and amplifies supportive energy resonance.',
+    obtainments: [{ targetId: 'cupid-market' }],
   },
   {
     id: 'blessed-wings',
@@ -444,6 +592,9 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A sanctified wing relic radiating protective grace. It enhances survivability through subtle reinforcement of divine alignment.',
+    obtainments: [{ targetId: 'cupid-market' }],
   },
   {
     id: 'heavenly-wings',
@@ -459,6 +610,12 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'A transcendent wing structure that resonates with divine authority. It increases overall combat balance through elevated spiritual stability.',
+    obtainments: [
+      { targetId: 'boa-hancock-boss' },
+      { targetId: 'cupid-market' },
+    ],
   },
   {
     id: 'shadowoath-armor',
@@ -473,5 +630,8 @@ export const ACCESSORIES = [
     stackLimit: 3,
     tradeable: true,
     image: null,
+    description:
+      'An oathbound armor carved from shadow-forged contracts. It strengthens defensive endurance while reinforcing vow-based power scaling.',
+    obtainments: [{ targetId: 'blood-commander-raid' }],
   },
 ];

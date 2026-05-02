@@ -4,7 +4,9 @@ export const TIERS = {
   B: { id: 3, name: 'B', color: 'var(--color-tier-b)', textGlow: 'var(--text-glow-tier-b)' },
   A: { id: 4, name: 'A', color: 'var(--color-tier-a)', textGlow: 'var(--text-glow-tier-a)' },
   S: { id: 5, name: 'S', color: 'var(--color-tier-s)', textGlow: 'var(--text-glow-tier-s)' },
-  SS: { id: 6, name: 'SS', color: 'var(--color-tier-ss)', textGlow: 'var(--text-glow-tier-ss)' },
-  SSS: { id: 7, name: 'SSS', color: 'var(--color-tier-sss)', textGlow: 'var(--text-glow-tier-sss)' },
-  '?': { id: 8, name: '?', color: 'var(--color-tier-x)', textGlow: 'var(--text-glow-tier-x)' },
+  'S+': { id: 6, name: 'S+', color: 'var(--color-tier-s)', textGlow: 'var(--text-glow-tier-s)' },
+  SS: { id: 7, name: 'SS', color: 'var(--color-tier-ss)', textGlow: 'var(--text-glow-tier-ss)' },
+  'SS+': { id: 8, name: 'SS+', color: 'var(--color-tier-ss)', textGlow: 'var(--text-glow-tier-ss)' },
+  SSS: { id: 9, name: 'SSS', color: 'var(--color-tier-sss)', textGlow: 'var(--text-glow-tier-sss)' },
+  '?': { id: 10, name: '?', color: 'var(--color-tier-x)', textGlow: 'var(--text-glow-tier-x)' },
 };

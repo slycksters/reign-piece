@@ -2,7 +2,7 @@ import { Filter, List } from './components';
 import styles from './DataExplorer.module.css';
 import { useDataExplorer } from './hooks';
 
-export const DataExplorer = ({ data, sortOptions = ['name'] }) => {
+export const DataExplorer = ({ data, sortOptions = ['name'], basePath }) => {
   const {
     category,
     setCategory,
@@ -30,7 +30,7 @@ export const DataExplorer = ({ data, sortOptions = ['name'] }) => {
             sortOptions={sortOptions}
           />
 
-          <List data={filteredData} />
+          <List data={filteredData} basePath={basePath} />
         </div>
       </div>
     </section>

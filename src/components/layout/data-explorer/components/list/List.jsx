@@ -4,7 +4,7 @@ import styles from './List.module.css';
 import { Button } from '../../../../ui';
 
 export const List = (props) => {
-  const { data } = props;
+  const { data, basePath } = props;
 
   return (
     <main
@@ -16,6 +16,7 @@ export const List = (props) => {
       {data.map((item) => (
         <Button
           key={item.id}
+          to={`${basePath}/${item.id}`}
           borderColor={item.rarity?.color ?? 'var(--border-strong)'}
           className={clsx(styles.cardButton, '!p-0')}
           variant={'styled_borders'}

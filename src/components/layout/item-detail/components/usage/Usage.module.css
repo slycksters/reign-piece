@@ -1,0 +1,26 @@
+.usage {
+  border-top: 1px solid var(--border-default);
+  border-right: 1px solid var(--border-default);
+  padding: 16px;
+}
+
+@media (max-width: 1023px) {
+  .usage {
+    border-right: none;
+  }
+}
+
+.usageTitle {
+  font-weight: 600;
+}
+
+.usageList {
+  padding-left: 16px;
+  padding-top: 20px;
+}
+
+.usageListItem {
+  color: var(--text-secondary);
+  font-size: 14px;
+  list-style: square;
+}

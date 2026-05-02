@@ -106,4 +106,28 @@ export const RANKS = [
       { targetId: 'cursed-core', quantity: 20 },
     ],
   },
+  {
+    id: 'primera',
+    name: 'Primera',
+    stats: {
+      overallDamage: 0.7,
+      damageReduction: 0.43,
+      yenGain: 0.65,
+      crystalGain: 0.65,
+      experienceGain: 0.75,
+      droprate: 0.3,
+      lifesteal: 0.02,
+      defense: 0.78,
+      melee: 0.15,
+      power: 0.15,
+      sword: 0.15,
+    },
+    requirements: [
+      { targetId: 'ulquiorra-tear', quantity: 100 },
+      { targetId: 'cero-spear', quantity: 20 },
+      { targetId: 'los-lobos-fang', quantity: 50 },
+      { targetId: 'lilynette-soul', quantity: 30 },
+      { targetId: 'starrk-pistol', quantity: 15 },
+    ],
+  },
 ];

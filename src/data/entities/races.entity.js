@@ -4,6 +4,7 @@ export const RACES = [
     name: 'Human',
     description: 'The starting race, does not provide any buffs.',
     rarity: 'uncommon',
+    tier: 'B',
     chance: 0.6,
     stats: {},
     obtainment: 'Can be rolled using a Race Token',
@@ -12,6 +13,7 @@ export const RACES = [
     id: 'igniteborn',
     name: 'Igniteborn',
     rarity: 'rare',
+    tier: 'B',
     chance: 0.2,
     stats: {
       overallDamage: 0.07,
@@ -24,6 +26,7 @@ export const RACES = [
     id: 'skypiean',
     name: 'Skypiean',
     rarity: 'rare',
+    tier: 'B',
     chance: 0.2,
     stats: {
       movementSpeed: 0.06,
@@ -36,6 +39,7 @@ export const RACES = [
     id: 'mink',
     name: 'Mink',
     rarity: 'epic',
+    tier: 'B',
     chance: 0.12,
     stats: {
       overallDamage: 0.05,
@@ -49,6 +53,7 @@ export const RACES = [
     id: 'fishman',
     name: 'Fishman',
     rarity: 'legendary',
+    tier: 'A',
     chance: 0.3,
     stats: {
       overallDamage: 0.1,
@@ -61,6 +66,7 @@ export const RACES = [
     id: 'hybrid',
     name: 'Hybrid',
     rarity: 'legendary',
+    tier: 'A',
     chance: 0.16,
     stats: {
       overallDamage: 0.13,
@@ -76,6 +82,7 @@ export const RACES = [
     id: 'saiyan',
     name: 'Saiyan',
     rarity: 'mythical',
+    tier: 'S',
     chance: 0.07,
     stats: {
       overallDamage: 0.25,
@@ -89,6 +96,7 @@ export const RACES = [
     id: 'vessel',
     name: 'Vessel',
     rarity: 'mythical',
+    tier: 'S',
     chance: 0.07,
     stats: {
       overallDamage: 0.2,
@@ -102,6 +110,7 @@ export const RACES = [
     id: 'chimera-ant',
     name: 'Chimera Ant',
     rarity: 'mythical',
+    tier: 'S',
     chance: 0.04,
     stats: {
       overallDamage: 0.25,
@@ -116,6 +125,7 @@ export const RACES = [
     id: 'golem',
     name: 'Golem',
     rarity: 'special',
+    tier: 'D',
     chance: 0.05,
     stats: {
       overallDamage: 0.1,
@@ -130,6 +140,7 @@ export const RACES = [
     id: 'king-vessel',
     name: `King's Vessel`,
     rarity: 'special',
+    tier: 'SS',
     stats: {
       overallDamage: 0.3,
       damageReduction: 0.2,
@@ -145,6 +156,7 @@ export const RACES = [
     id: 'evolved-ant',
     name: 'Evolved Ant',
     rarity: 'special',
+    tier: 'SS',
     stats: {
       overallDamage: 0.35,
       damageReduction: 0.25,
@@ -158,6 +170,7 @@ export const RACES = [
     id: 'slasher-demon',
     name: 'Slasher Demon',
     rarity: 'special',
+    tier: 'SS',
     stats: {
       overallDamage: 0.315,
       damageReduction: 0.175,
@@ -167,5 +180,39 @@ export const RACES = [
       fameGain: 0.25,
     },
     obtainment: 'Obtained by completing the Slasher Demon questline',
+  },
+  {
+    id: 'panthera',
+    name: 'Panthera',
+    rarity: 'special',
+    tier: 'SS',
+    chance: 0.05,
+    stats: {
+      overallDamage: 0.4,
+      damageReduction: 0.25,
+      movementSpeed: 0.4,
+      jumpHeight: 0.425,
+      dashPower: 0.35,
+      fameGain: 0.3,
+      lifesteal: 0.082,
+    },
+    obtainment: 'Can be rolled using a Los Lobos Fang',
+  },
+  {
+    id: 'nightwalker',
+    name: 'Nightwalker',
+    rarity: 'special',
+    tier: 'SS',
+    chance: 0.03,
+    stats: {
+      overallDamage: 0.45,
+      damageReduction: 0.3,
+      movementSpeed: 0.435,
+      jumpHeight: 0.425,
+      dashPower: 0.475,
+      fameGain: 0.325,
+      droprate: 0.05,
+    },
+    obtainment: 'Can be rolled using a Shadow Fragment',
   },
 ];
